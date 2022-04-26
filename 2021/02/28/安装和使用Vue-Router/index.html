@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.1.0">
+
+  
+    <meta name="description" content="XiaoBei">
+  
+
+  
+
+  
+    <meta name="author" content="XiaoBei博客">
+  
+
+  
+
+  
+
+  <title>安装和使用Vue-Router | 小北博客|一个喜欢计算机的小白程序员|博客分享学习经验</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://file.52xiaobei.cn/NAJVetU1zsuJFFnrJbMviOBCHgxNFJcS/236d7224a7b34fff8b7117ecc83f8c69.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          <img src="https://file.52xiaobei.cn/bFxrC3Wet70up4PB4sFV1FCXHCsud4JA/logo.png" alt="小    北" />
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/archives">归档</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友情</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">安装和使用Vue-Router</h1>
+          <h2 class="title-sub-wrap">
+            <strong>XiaoBei博客</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-02-28T07:17:26.000Z" itemprop="datePublished">2021-02-28</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Vue/">📒 Vue</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/Vue/">🏷️ Vue</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="一-提升vue创建项目速度"><a href="#一-提升vue创建项目速度" class="headerlink" title="一.提升vue创建项目速度"></a>一.提升vue创建项目速度</h1><ul>
+<li><p>npm安装和vue创建项目解决办法</p>
+<blockquote>
+<ul>
+<li><p>虽然设置过淘宝镜像<code>npm install-g cnpm --registry=https://registry.npm.taobao.org</code></p>
+</li>
+<li><p>但是通过vue init webpack projectName新建项目是和淘宝镜像没关系的，因为vue-cli 用的是 npm 源，所以只要设置 npm 源就行了，可以提升创建速度：</p>
+</li>
+<li><pre><code class="python">npm config set registry https://registry.npm.taobao.org
+</code></pre>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h1 id="二-安装Vue-Router"><a href="#二-安装Vue-Router" class="headerlink" title="二.安装Vue-Router"></a>二.安装Vue-Router</h1><ul>
+<li><p>步骤一：安装vue-router</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>步骤二：在模块化工程中使用它(因为是一个插件，所以可以通过Vue.use()来安装路由)</p>
+<ul>
+<li><p>第一步：<strong>导入</strong>路由对象，并且<strong>调用Vue.use(VueRouter)</strong></p>
+</li>
+<li><p>第二步：创建<strong>路由实例</strong>，并且传入路由<strong>映射配置</strong></p>
+</li>
+<li><p>第三步：在<strong>Vue实例</strong>中<strong>挂载</strong>创建的<strong>路由实例</strong></p>
+<p><img src="https://i.loli.net/2021/03/02/5inf8kldZQBMRIV.png" alt="vuerouter1.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="三-使用Vue-Router"><a href="#三-使用Vue-Router" class="headerlink" title="三.使用Vue-Router"></a>三.使用Vue-Router</h1><ul>
+<li><p>使用vue-router的步骤：</p>
+<ul>
+<li><p>第一步：创建路由组件</p>
+</li>
+<li><p>第二步：配置路由映射：组件和路径映射关系</p>
+</li>
+<li><p>第三步：使用路由:通过&lt; router-link &gt;和&lt; router-view &gt; </p>
+<p><img src="https://i.loli.net/2021/03/02/oNbWDjmOMXJE9Qy.png" alt="vuerouter2.png"></p>
+<p><img src="https://i.loli.net/2021/03/02/gkoseMKh7UDRt9c.png" alt="vuerouter3.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="四-router-link-属性"><a href="#四-router-link-属性" class="headerlink" title="四.router-link 属性"></a>四.router-link 属性</h1><ul>
+<li><h2 id="to-属性"><a href="#to-属性" class="headerlink" title="to 属性"></a><strong>to</strong> 属性</h2><ul>
+<li><p>相当于a标签中的”herf”属性，后面跟跳转链接所用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;/home&quot;&gt;Home&lt;/router-link&gt;</span><br><span class="line">&lt;!-- 渲染结果 --&gt;</span><br><span class="line">&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h2 id="replace-属性"><a href="#replace-属性" class="headerlink" title="replace 属性"></a><strong>replace</strong> 属性</h2><ul>
+<li><p>replace在routre-link标签中添加后，页面切换时不会留下历史记录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;/home&quot; replace&gt;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h2 id="tag-属性"><a href="#tag-属性" class="headerlink" title="tag 属性"></a><strong>tag</strong> 属性</h2><ul>
+<li><p>具有tag属性的router-link会被渲染成相应的标签</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;/home&quot; tag=&quot;li&quot;&gt;Home&lt;/router-link&gt;</span><br><span class="line">&lt;!-- 渲染结果 --&gt;</span><br><span class="line">&lt;li&gt;Home&lt;/li&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h2 id="active-class-属性"><a href="#active-class-属性" class="headerlink" title="active-class 属性"></a><strong>active-class</strong> 属性</h2><ul>
+<li><p>这个属性是设置激活链接时class属性，也就是当前页面所有与当前地址所匹配的的链接都会被添加class属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;/home&quot; active-class=&quot;u-link--Active&quot;&gt;Home&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>active-class</code>属性的默认值是<code>router-link-active</code>,所以如果没有设置，就会被渲染为这个class</p>
+</li>
+</ul>
+</li>
+<li><h3 id="可以在router-Js里面设置"><a href="#可以在router-Js里面设置" class="headerlink" title="可以在router.Js里面设置"></a>可以在router.Js里面设置</h3> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">mode: <span class="string">&#x27;hash&#x27;</span>,</span><br><span class="line">linkActiveClass: <span class="string">&#x27;u-link--Active&#x27;</span>, // 这是链接激活时的<span class="keyword">class</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="exact-属性"><a href="#exact-属性" class="headerlink" title="exact 属性"></a><strong>exact</strong> 属性</h2><ul>
+<li><p>开启<code>router-link</code>的严格模式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;/&quot; exact&gt;home&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上面这个标签如果不加<code>exact</code>属性，则会在<code>vue2.leenty.com/article</code>页面下也会被匹配到，<br>这却不是我们的本意,在加了这个属性后就会正确的匹配到<code>vue2.leenty.com</code>下</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="五-认识路由懒加载"><a href="#五-认识路由懒加载" class="headerlink" title="五.认识路由懒加载"></a>五.认识路由懒加载</h1><ul>
+<li><p>官方给出解释:</p>
+<ul>
+<li><p>当打包构建应用时，Javascript包会变得非常大，影响页面加载</p>
+</li>
+<li><p>如果我们能把不同的路由对应的组件分割成不同的代码块，</p>
+<p>然后当路由被访问的时候才加载对应的组件，这样就更加高效了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="路由懒加载的方式"><a href="#路由懒加载的方式" class="headerlink" title="路由懒加载的方式"></a>路由懒加载的方式</h2><ul>
+<li><p>方式一：结合Vue异步组件与webpack代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const index = r =&gt; require.ensure([], () =&gt; r(require(<span class="string">&#x27;@/page/index&#x27;</span>)), <span class="string">&#x27;index&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式二：AMD写法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const Home = resolve =&gt;require([<span class="string">&#x27;../components/page/Home.vue&#x27;</span>], resolve)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式三：ES6写法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const Chat = () =&gt; <span class="keyword">import</span>(<span class="string">&#x27;@/components/page/Chat.vue&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置完后需要再new Router中使用</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">    &#123;path:  <span class="string">&#x27;/index&#x27;</span>, component:  Chat&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="六-传递参数的方式"><a href="#六-传递参数的方式" class="headerlink" title="六.传递参数的方式"></a>六.传递参数的方式</h1><ul>
+<li><p>传递参数主要有两种类型：params和query</p>
+</li>
+<li><h2 id="params的类型"><a href="#params的类型" class="headerlink" title="params的类型"></a>params的类型</h2><ul>
+<li>配置路由的格式：**&#x2F;router&#x2F;:id**</li>
+<li>传递的方式：在<strong>path</strong>后面跟上对应的值</li>
+<li>传递后形成的路径：**&#x2F;router&#x2F;123**,<strong>&#x2F;router&#x2F;abc</strong></li>
+</ul>
+</li>
+<li><h2 id="query的类型"><a href="#query的类型" class="headerlink" title="query的类型"></a>query的类型</h2><ul>
+<li>配置路由格式：**&#x2F;router**,也就是普通配置</li>
+<li>传递的方式：对象中使用<strong>query的key作为传递方式</strong></li>
+<li>传递后形成的路径：**&#x2F;router?id&#x3D;123**,<strong>&#x2F;router?id&#x3D;abc</strong></li>
+</ul>
+</li>
+</ul>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/02/28/%E5%AE%89%E8%A3%85Docker/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">安装Docker</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='/js/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        admin_email: "1113855149@qq.com",
+        appId: "JzXEzGL0Nd6hpMvSef3r2rM7-gzGzoHsz",
+        appKey: "wJdh8Ayj3yeBJJHkOjzoEybj",
+        avatar: "identicon",
+        placeholder: "请留下您宝贵的评论吧.",
+        notify: true,
+        visitor: true,
+        pageSize: 7,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://file.52xiaobei.cn/bFxrC3Wet70up4PB4sFV1FCXHCsud4JA/logo.png" class="soft-size--round soft-style--box" alt="XiaoBei">
+    
+    
+      <h2>XiaoBei</h2>
+    
+    
+      <p>做一个平凡而不平庸的码农.</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>16</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        8
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        12
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Django/">
+            Django (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Python/">
+            Python (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Docker/">
+            Docker (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Pytnon/">
+            Pytnon (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+            数据结构 (6)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Vue/">
+            Vue (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+            数据库 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Hexo/">
+            Hexo (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/DRF/" style="font-size: 10px;" class="tags-cloud-0">DRF</a> <a href="/tags/Django/" style="font-size: 10px;" class="tags-cloud-0">Django</a> <a href="/tags/Docker/" style="font-size: 13.33px;" class="tags-cloud-3">Docker</a> <a href="/tags/Docker%E5%9F%BA%E7%A1%80/" style="font-size: 13.33px;" class="tags-cloud-3">Docker基础</a> <a href="/tags/FastApi/" style="font-size: 10px;" class="tags-cloud-0">FastApi</a> <a href="/tags/Hexo/" style="font-size: 10px;" class="tags-cloud-0">Hexo</a> <a href="/tags/Python/" style="font-size: 20px;" class="tags-cloud-10">Python</a> <a href="/tags/Pytnon/" style="font-size: 13.33px;" class="tags-cloud-3">Pytnon</a> <a href="/tags/Vue/" style="font-size: 10px;" class="tags-cloud-0">Vue</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;" class="tags-cloud-0">关系型数据库</a> <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;" class="tags-cloud-0">搭建博客</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.67px;" class="tags-cloud-7">数据结构</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+    </div>
+     
+    <p>&copy; 2022 <a href="/" target="_blank">XiaoBei博客</a></p>
+
+    
+      <p><a href="https://beian.miit.gov.cn" target="_blank">京ICP备2020047212号</a></p>
+    
+
+    <p>作者 - <a href="https://52xiaobei.cn/about" target="_blank" rel="noopener noreferrer">XiaoBei</a> 项目 - <a href="https://github.com/LaoJiuGua" target="_blank" rel="noopener noreferrer author">GitHub</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>

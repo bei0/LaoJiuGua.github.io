@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.1.0">
+
+  
+    <meta name="description" content="XiaoBei">
+  
+
+  
+
+  
+    <meta name="author" content="XiaoBei博客">
+  
+
+  
+
+  
+
+  <title>DRF源码 | 小北博客|一个喜欢计算机的小白程序员|博客分享学习经验</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://file.52xiaobei.cn/NAJVetU1zsuJFFnrJbMviOBCHgxNFJcS/236d7224a7b34fff8b7117ecc83f8c69.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          <img src="https://file.52xiaobei.cn/bFxrC3Wet70up4PB4sFV1FCXHCsud4JA/logo.png" alt="小    北" />
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/archives">归档</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友情</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">DRF源码</h1>
+          <h2 class="title-sub-wrap">
+            <strong>XiaoBei博客</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-02-28T07:17:26.000Z" itemprop="datePublished">2021-02-28</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Django/">📒 Django</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/Pytnon/">🏷️ Pytnon</a></li>
+  
+    <li><a href="/tags/Django/">🏷️ Django</a></li>
+  
+    <li><a href="/tags/DRF/">🏷️ DRF</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="ApiView–dispatch"><a href="#ApiView–dispatch" class="headerlink" title="ApiView–dispatch"></a>ApiView–dispatch</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">dispatch</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        `.dispatch()` is pretty much the same as Django&#x27;s regular dispatch,</span></span><br><span class="line"><span class="string">        but with extra hooks for startup, finalize, and exception handling.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">    self.args = args</span><br><span class="line">    self.kwargs = kwargs</span><br><span class="line">    <span class="comment"># DRF的dispath对原生的request进行封装</span></span><br><span class="line">    request = self.initialize_request(request, *args, **kwargs)</span><br><span class="line">    self.request = request</span><br><span class="line">    </span><br><span class="line">    self.headers = self.default_response_headers  <span class="comment"># deprecate?</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        self.initial(request, *args, **kwargs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Get the appropriate handler method</span></span><br><span class="line">        <span class="keyword">if</span> request.method.lower() <span class="keyword">in</span> self.http_method_names:</span><br><span class="line">            handler = <span class="built_in">getattr</span>(self, request.method.lower(),</span><br><span class="line">                              self.http_method_not_allowed)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                handler = self.http_method_not_allowed</span><br><span class="line"></span><br><span class="line">                response = handler(request, *args, **kwargs)</span><br><span class="line"></span><br><span class="line">                <span class="keyword">except</span> Exception <span class="keyword">as</span> exc:</span><br><span class="line">                    response = self.handle_exception(exc)</span><br><span class="line"></span><br><span class="line">                    self.response = self.finalize_response(request, response, *args, **kwargs)</span><br><span class="line">                    <span class="keyword">return</span> self.response</span><br><span class="line"></span><br><span class="line">------------------------------------------------------</span><br><span class="line">                </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">initial</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Runs anything that needs to occur prior to calling the method handler.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.format_kwarg = self.get_format_suffix(**kwargs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Perform content negotiation and store the accepted info on the request</span></span><br><span class="line">        neg = self.perform_content_negotiation(request)</span><br><span class="line">        request.accepted_renderer, request.accepted_media_type = neg</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Determine the API version, if versioning is in use.</span></span><br><span class="line">        version, scheme = self.determine_version(request, *args, **kwargs)</span><br><span class="line">        request.version, request.versioning_scheme = version, scheme</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Ensure that the incoming request is permitted</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 进行认证</span></span><br><span class="line">        self.perform_authentication(request)</span><br><span class="line">        </span><br><span class="line">        self.check_permissions(request)</span><br><span class="line">        self.check_throttles(request)                </span><br><span class="line"></span><br><span class="line">------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">initialize_request</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Returns the initial request object.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">    parser_context = self.get_parser_context(request)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Request(</span><br><span class="line">        request,  <span class="comment"># 原生的request</span></span><br><span class="line">        parsers=self.get_parsers(),</span><br><span class="line">        authenticators=self.get_authenticators(),</span><br><span class="line">        negotiator=self.get_content_negotiator(),</span><br><span class="line">        parser_context=parser_context</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">------------------------------------------------------</span><br><span class="line"></span><br><span class="line">request._request  <span class="comment"># 获取原生的request</span></span><br><span class="line">requset.authenticators   <span class="comment"># 获取认证类的对象</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="DRF-认证（authentication）"><a href="#DRF-认证（authentication）" class="headerlink" title="DRF-认证（authentication）"></a>DRF-认证（authentication）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_authenticators</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Instantiates and returns the list of authenticators that this view can use.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 循环认证类列表并对每个认证类进行实例化</span></span><br><span class="line">    <span class="keyword">return</span> [auth() <span class="keyword">for</span> auth <span class="keyword">in</span> self.authentication_classes]</span><br><span class="line"></span><br><span class="line">-----------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认authentication_classes</span></span><br><span class="line">authentication_classes = api_settings.DEFAULT_AUTHENTICATION_CLASSES</span><br><span class="line"><span class="comment"># 如果自己写的类继承ApiView，可以在自己写的类中进行配置：如下</span></span><br><span class="line">authentication_classes = [SessionAuthentication,BasicAuthentication]</span><br><span class="line"></span><br><span class="line">-----------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="comment"># ApiView里默认的两个认证类对象</span></span><br><span class="line"><span class="string">&#x27;DEFAULT_AUTHENTICATION_CLASSES&#x27;</span>: [</span><br><span class="line">        <span class="string">&#x27;rest_framework.authentication.SessionAuthentication&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;rest_framework.authentication.BasicAuthentication&#x27;</span></span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_authenticate</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Attempt to authenticate the request using each authentication instance</span></span><br><span class="line"><span class="string">        in turn.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 循环出认证类对象对象并执行对象内的authenticate方法</span></span><br><span class="line">    <span class="keyword">for</span> authenticator <span class="keyword">in</span> self.authenticators:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 执行认证类的authenticate方法</span></span><br><span class="line">            <span class="comment"># 1.如果authenticate方法抛出异常，self._not_authenticated()执行</span></span><br><span class="line">            <span class="comment"># 2.有返回值，必须是元组：（request.user，request.auth）</span></span><br><span class="line">            <span class="comment"># 3.返回None，当前认证不处理交给下一个认证来处理</span></span><br><span class="line">            user_auth_tuple = authenticator.authenticate方法抛出异常，(self)</span><br><span class="line">            <span class="keyword">except</span> exceptions.APIException:</span><br><span class="line">                self._not_authenticated()</span><br><span class="line">                <span class="keyword">raise</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> user_auth_tuple <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    self._authenticator = authenticator</span><br><span class="line">                    self.user, self.auth = user_auth_tuple</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">                self._not_authenticated()</span><br><span class="line">               </span><br><span class="line">-----------------------------------------------------------------            </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_not_authenticated</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Set authenticator, user &amp; authtoken representing an unauthenticated request.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Defaults are None, AnonymousUser &amp; None.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    self._authenticator = <span class="literal">None</span></span><br><span class="line">	<span class="comment"># 默认值是匿名用户(AnonymousUser)</span></span><br><span class="line">    <span class="keyword">if</span> api_settings.UNAUTHENTICATED_USER:</span><br><span class="line">        self.user = api_settings.UNAUTHENTICATED_USER()  <span class="comment"># AnonymousUser</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        self.user = <span class="literal">None</span></span><br><span class="line">	<span class="comment"># 默认值是None</span></span><br><span class="line">    <span class="keyword">if</span> api_settings.UNAUTHENTICATED_TOKEN:</span><br><span class="line">        self.auth = api_settings.UNAUTHENTICATED_TOKEN() <span class="comment"># None</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        self.auth = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="DRF-权限（permission）"><a href="#DRF-权限（permission）" class="headerlink" title="DRF-权限（permission）"></a>DRF-权限（permission）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_permissions</span>(<span class="params">self</span>):</span><br><span class="line">   <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">   Instantiates and returns the list of permissions that this view requires.</span></span><br><span class="line"><span class="string">   实例化并返回此视图所需的权限列表。</span></span><br><span class="line"><span class="string">   &quot;&quot;&quot;</span></span><br><span class="line">	<span class="comment"># 循环出权限类列表并执行出来</span></span><br><span class="line">   <span class="keyword">return</span> [permission() <span class="keyword">for</span> permission <span class="keyword">in</span> self.permission_classes]</span><br><span class="line"></span><br><span class="line">------------------------------------------------------------</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check_permissions</span>(<span class="params">self, request</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Check if the request should be permitted.</span></span><br><span class="line"><span class="string">        Raises an appropriate exception if the request is not permitted.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> permission <span class="keyword">in</span> self.get_permissions():</span><br><span class="line">        <span class="comment"># 没有权限执行错误处理</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> permission.has_permission(request, self):</span><br><span class="line">            self.permission_denied(</span><br><span class="line">                request,</span><br><span class="line">                <span class="comment"># 反射 permission对象里是否有message属性</span></span><br><span class="line">                message=<span class="built_in">getattr</span>(permission, <span class="string">&#x27;message&#x27;</span>, <span class="literal">None</span>),</span><br><span class="line">                <span class="comment"># 反射 permission对象里是否有code属性</span></span><br><span class="line">                code=<span class="built_in">getattr</span>(permission, <span class="string">&#x27;code&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line">            )</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">BasePermission</span>(metaclass=BasePermissionMetaclass):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    A base class from which all permission classes should inherit.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">has_permission</span>(<span class="params">self, request, view</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Return `True` if permission is granted, `False` otherwise.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 返回True有权限，反之没有权限</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">has_object_permission</span>(<span class="params">self, request, view, obj</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Return `True` if permission is granted, `False` otherwise.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="DRF-节流（throttle）"><a href="#DRF-节流（throttle）" class="headerlink" title="DRF-节流（throttle）"></a>DRF-节流（throttle）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_throttles</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Instantiates and returns the list of throttles that this view uses.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 循环节流类列表并执行</span></span><br><span class="line">    <span class="keyword">return</span> [throttle() <span class="keyword">for</span> throttle <span class="keyword">in</span> self.throttle_classes]</span><br><span class="line">--------------------------------------------------------------------</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check_throttles</span>(<span class="params">self, request</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Check if request should be throttled.</span></span><br><span class="line"><span class="string">    Raises an appropriate exception if the request is throttled.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    throttle_durations = []</span><br><span class="line">    <span class="keyword">for</span> throttle <span class="keyword">in</span> self.get_throttles():</span><br><span class="line">        <span class="comment"># 执行不满足执行下面代码</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> throttle.allow_request(request, self):</span><br><span class="line">            <span class="comment"># 将节流对象内的wait方法的返回值添加到throttle_durations中</span></span><br><span class="line">            throttle_durations.append(throttle.wait())</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># 如果throttle_durations有值</span></span><br><span class="line">    <span class="keyword">if</span> throttle_durations:</span><br><span class="line">        <span class="comment"># Filter out `None` values which may happen in case of config / rate</span></span><br><span class="line">        <span class="comment"># changes, see #1438</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 去掉throttle_durations列表里面的空字符</span></span><br><span class="line">        durations = [</span><br><span class="line">            duration <span class="keyword">for</span> duration <span class="keyword">in</span> throttle_durations</span><br><span class="line">            <span class="keyword">if</span> duration <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span></span><br><span class="line">        ]</span><br><span class="line">		<span class="comment"># 取出最大值</span></span><br><span class="line">        duration = <span class="built_in">max</span>(durations, default=<span class="literal">None</span>)</span><br><span class="line">        self.throttled(request, duration)</span><br><span class="line">-------------------------------------------------------------------</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">throttled</span>(<span class="params">self, request, wait</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    If request is throttled, determine what kind of exception to raise.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">raise</span> exceptions.Throttled(wait)</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="DRF-版本（version）"><a href="#DRF-版本（version）" class="headerlink" title="DRF-版本（version）"></a>DRF-版本（version）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">def</span> <span class="title function_">initial</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Runs anything that needs to occur prior to calling the method handler.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.format_kwarg = self.get_format_suffix(**kwargs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Perform content negotiation and store the accepted info on the request</span></span><br><span class="line">        neg = self.perform_content_negotiation(request)</span><br><span class="line">        request.accepted_renderer, request.accepted_media_type = neg</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Determine the API version, if versioning is in use.</span></span><br><span class="line">        <span class="comment"># 版本</span></span><br><span class="line">        version, scheme = self.determine_version(request, *args, **kwargs)</span><br><span class="line">        request.version, request.versioning_scheme = version, scheme</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Ensure that the incoming request is permitted</span></span><br><span class="line">        <span class="comment"># 认证</span></span><br><span class="line">        self.perform_authentication(request)</span><br><span class="line">        <span class="comment"># 权限</span></span><br><span class="line">        self.check_permissions(request)</span><br><span class="line">        <span class="comment"># 限流</span></span><br><span class="line">        self.check_throttles(request)</span><br><span class="line">        </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">determine_version</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">     If versioning is being used, then determine any API version for the</span></span><br><span class="line"><span class="string">     incoming request. Returns a two-tuple of (version, versioning_scheme)</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> self.versioning_class <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> (<span class="literal">None</span>, <span class="literal">None</span>)</span><br><span class="line">    <span class="comment"># 实例化版本类</span></span><br><span class="line">    scheme = self.versioning_class()</span><br><span class="line">    <span class="comment"># 执行版本类里面的determine_version方法</span></span><br><span class="line">    <span class="comment"># 返回值是元组（determine_version方法返回值，实例化对象）</span></span><br><span class="line">    <span class="keyword">return</span> (scheme.determine_version(request, *args, **kwargs), scheme)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dispatch methods</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">URLPathVersioning</span>(<span class="title class_ inherited__">BaseVersioning</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    To the client this is the same style as `NamespaceVersioning`.</span></span><br><span class="line"><span class="string">    The difference is in the backend - this implementation uses</span></span><br><span class="line"><span class="string">    Django&#x27;s URL keyword arguments to determine the version.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    An example URL conf for two views that accept two different versions.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    urlpatterns = [</span></span><br><span class="line"><span class="string">        re_path(r&#x27;^(?P&lt;version&gt;[v1|v2]+)/users/$&#x27;, users_list, name=&#x27;users-list&#x27;),</span></span><br><span class="line"><span class="string">        re_path(r&#x27;^(?P&lt;version&gt;[v1|v2]+)/users/(?P&lt;pk&gt;[0-9]+)/$&#x27;, users_detail, name=&#x27;users-detail&#x27;)</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    GET /1.0/something/ HTTP/1.1</span></span><br><span class="line"><span class="string">    Host: example.com</span></span><br><span class="line"><span class="string">    Accept: application/json</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    invalid_version_message = _(<span class="string">&#x27;Invalid version in URL path.&#x27;</span>)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">determine_version</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        version = kwargs.get(self.version_param, self.default_version)</span><br><span class="line">        <span class="keyword">if</span> version <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            version = self.default_version</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.is_allowed_version(version):</span><br><span class="line">            <span class="keyword">raise</span> exceptions.NotFound(self.invalid_version_message)</span><br><span class="line">        <span class="keyword">return</span> version</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">self, viewname, args=<span class="literal">None</span>, kwargs=<span class="literal">None</span>, request=<span class="literal">None</span>, <span class="built_in">format</span>=<span class="literal">None</span>, **extra</span>):</span><br><span class="line">        <span class="keyword">if</span> request.version <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            kwargs = &#123;&#125; <span class="keyword">if</span> (kwargs <span class="keyword">is</span> <span class="literal">None</span>) <span class="keyword">else</span> kwargs</span><br><span class="line">            kwargs[self.version_param] = request.version</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">super</span>().reverse(</span><br><span class="line">            viewname, args, kwargs, request, <span class="built_in">format</span>, **extra</span><br><span class="line">        )</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/10/%E5%AE%9E%E7%8E%B0FastAPI%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%A8%A1%E8%8C%83%E5%AE%9E%E6%96%BD/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">FastApi微服务模式的规范实施</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/02/28/Docker%E7%AE%80%E4%BB%8B/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Docker简介</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='/js/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        admin_email: "1113855149@qq.com",
+        appId: "JzXEzGL0Nd6hpMvSef3r2rM7-gzGzoHsz",
+        appKey: "wJdh8Ayj3yeBJJHkOjzoEybj",
+        avatar: "identicon",
+        placeholder: "请留下您宝贵的评论吧.",
+        notify: true,
+        visitor: true,
+        pageSize: 7,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://file.52xiaobei.cn/bFxrC3Wet70up4PB4sFV1FCXHCsud4JA/logo.png" class="soft-size--round soft-style--box" alt="XiaoBei">
+    
+    
+      <h2>XiaoBei</h2>
+    
+    
+      <p>做一个平凡而不平庸的码农.</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>16</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        8
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        12
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Django/">
+            Django (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Python/">
+            Python (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Docker/">
+            Docker (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Pytnon/">
+            Pytnon (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+            数据结构 (6)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Vue/">
+            Vue (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+            数据库 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Hexo/">
+            Hexo (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/DRF/" style="font-size: 10px;" class="tags-cloud-0">DRF</a> <a href="/tags/Django/" style="font-size: 10px;" class="tags-cloud-0">Django</a> <a href="/tags/Docker/" style="font-size: 13.33px;" class="tags-cloud-3">Docker</a> <a href="/tags/Docker%E5%9F%BA%E7%A1%80/" style="font-size: 13.33px;" class="tags-cloud-3">Docker基础</a> <a href="/tags/FastApi/" style="font-size: 10px;" class="tags-cloud-0">FastApi</a> <a href="/tags/Hexo/" style="font-size: 10px;" class="tags-cloud-0">Hexo</a> <a href="/tags/Python/" style="font-size: 20px;" class="tags-cloud-10">Python</a> <a href="/tags/Pytnon/" style="font-size: 13.33px;" class="tags-cloud-3">Pytnon</a> <a href="/tags/Vue/" style="font-size: 10px;" class="tags-cloud-0">Vue</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;" class="tags-cloud-0">关系型数据库</a> <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;" class="tags-cloud-0">搭建博客</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.67px;" class="tags-cloud-7">数据结构</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+    </div>
+     
+    <p>&copy; 2022 <a href="/" target="_blank">XiaoBei博客</a></p>
+
+    
+      <p><a href="https://beian.miit.gov.cn" target="_blank">京ICP备2020047212号</a></p>
+    
+
+    <p>作者 - <a href="https://52xiaobei.cn/about" target="_blank" rel="noopener noreferrer">XiaoBei</a> 项目 - <a href="https://github.com/LaoJiuGua" target="_blank" rel="noopener noreferrer author">GitHub</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>

@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.1.0">
+
+  
+    <meta name="description" content="XiaoBei">
+  
+
+  
+
+  
+    <meta name="author" content="XiaoBei博客">
+  
+
+  
+
+  
+
+  <title>数据库语法手册 | 小北博客|一个喜欢计算机的小白程序员|博客分享学习经验</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://file.52xiaobei.cn/NAJVetU1zsuJFFnrJbMviOBCHgxNFJcS/236d7224a7b34fff8b7117ecc83f8c69.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          <img src="https://file.52xiaobei.cn/bFxrC3Wet70up4PB4sFV1FCXHCsud4JA/logo.png" alt="小    北" />
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/archives">归档</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友情</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">数据库语法手册</h1>
+          <h2 class="title-sub-wrap">
+            <strong>XiaoBei博客</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-12-05T07:17:26.000Z" itemprop="datePublished">2021-12-05</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">📒 数据库</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/">🏷️ 关系型数据库</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h1><h2 id="数据库术语"><a href="#数据库术语" class="headerlink" title="数据库术语"></a>数据库术语</h2><ul>
+<li><code>数据库（database）</code> - 保存有组织的数据的容器（通常是一个文件或一组文件）。</li>
+<li><code>数据表（table）</code> - 某种特定类型数据的结构化清单。</li>
+<li><code>模式（schema）</code> - 关于数据库和表的布局及特性的信息。模式定义了数据在表中如何存储，包含存储什么样的数据，数据如何分解，各部分信息如何命名等信息。数据库和表都有模式。</li>
+<li><code>列（column）</code> - 表中的一个字段。所有表都是由一个或多个列组成的。</li>
+<li><code>行（row）</code> - 表中的一个记录。</li>
+<li><code>主键（primary key）</code> - 一列（或一组列），其值能够唯一标识表中每一行。</li>
+</ul>
+<h2 id="SQL-语法"><a href="#SQL-语法" class="headerlink" title="SQL 语法"></a>SQL 语法</h2><blockquote>
+<p>SQL（Structured Query Language)，标准 SQL 由 ANSI 标准委员会管理，从而称为 ANSI SQL。各个 DBMS 都有自己的实现，如 PL&#x2F;SQL、Transact-SQL 等。</p>
+</blockquote>
+<h2 id="SQL-语法结构"><a href="#SQL-语法结构" class="headerlink" title="SQL 语法结构"></a>SQL 语法结构</h2><p><img src="https://file.52xiaobei.cn/MxJfk2ezGogT8r4WPGC1DpgGFG3uLSQT/01.jpeg" alt="图片"></p>
+<p>SQL 语法结构包括：</p>
+<ul>
+<li><strong><code>子句</code></strong> - 是语句和查询的组成成分。（在某些情况下，这些都是可选的。）</li>
+<li><strong><code>表达式</code></strong> - 可以产生任何标量值，或由列和行的数据库表</li>
+<li><strong><code>谓词</code></strong> - 给需要评估的 SQL 三值逻辑（3VL）（true&#x2F;false&#x2F;unknown）或布尔真值指定条件，并限制语句和查询的效果，或改变程序流程。</li>
+<li><strong><code>查询</code></strong> - 基于特定条件检索数据。这是 SQL 的一个重要组成部分。</li>
+<li><strong><code>语句</code></strong> - 可以持久地影响纲要和数据，也可以控制数据库事务、程序流程、连接、会话或诊断。</li>
+</ul>
+<h4 id="SQL-语法要点"><a href="#SQL-语法要点" class="headerlink" title="SQL 语法要点"></a>SQL 语法要点</h4><ul>
+<li><strong>SQL 语句不区分大小写</strong>，但是数据库表名、列名和值是否区分，依赖于具体的 DBMS 以及配置。</li>
+</ul>
+<p>例如：<code>SELECT</code> 与 <code>select</code> 、<code>Select</code> 是相同的。</p>
+<ul>
+<li><strong>多条 SQL 语句必须以分号（<code>;</code>）分隔</strong>。</li>
+<li>处理 SQL 语句时，<strong>所有空格都被忽略</strong>。SQL 语句可以写成一行，也可以分写为多行。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 一行 SQL 语句</span><br><span class="line">UPDATE user SET username=&#x27;robot&#x27;, password=&#x27;robot&#x27; WHERE username = &#x27;root&#x27;;</span><br><span class="line"></span><br><span class="line">-- 多行 SQL 语句</span><br><span class="line">UPDATE user</span><br><span class="line">SET username=&#x27;robot&#x27;, password=&#x27;robot&#x27;</span><br><span class="line">WHERE username = &#x27;root&#x27;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>SQL 支持三种注释</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## 注释1</span><br><span class="line">-- 注释2</span><br><span class="line">/* 注释3 */</span><br></pre></td></tr></table></figure>
+
+<h2 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h2><h4 id="数据定义语言（DDL）"><a href="#数据定义语言（DDL）" class="headerlink" title="数据定义语言（DDL）"></a>数据定义语言（DDL）</h4><p>数据定义语言（Data Definition Language，DDL）是 SQL 语言集中负责数据结构定义与数据库对象定义的语言。</p>
+<p>DDL 的主要功能是<strong>定义数据库对象</strong>。</p>
+<p>DDL 的核心指令是 <code>CREATE</code>、<code>ALTER</code>、<code>DROP</code>。</p>
+<h4 id="数据操纵语言（DML）"><a href="#数据操纵语言（DML）" class="headerlink" title="数据操纵语言（DML）"></a>数据操纵语言（DML）</h4><p>数据操纵语言（Data Manipulation Language, DML）是用于数据库操作，对数据库其中的对象和数据运行访问工作的编程语句。</p>
+<p>DML 的主要功能是 <strong>访问数据</strong>，因此其语法都是以<strong>读写数据库</strong>为主。</p>
+<p>DML 的核心指令是 <code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code>、<code>SELECT</code>。这四个指令合称 CRUD(Create, Read, Update, Delete)，即增删改查。</p>
+<h4 id="事务控制语言（TCL）"><a href="#事务控制语言（TCL）" class="headerlink" title="事务控制语言（TCL）"></a>事务控制语言（TCL）</h4><p>事务控制语言 (Transaction Control Language, TCL) 用于<strong>管理数据库中的事务</strong>。这些用于管理由 DML 语句所做的更改。它还允许将语句分组为逻辑事务。</p>
+<p>TCL 的核心指令是 <code>COMMIT</code>、<code>ROLLBACK</code>。</p>
+<h4 id="数据控制语言（DCL）"><a href="#数据控制语言（DCL）" class="headerlink" title="数据控制语言（DCL）"></a>数据控制语言（DCL）</h4><p>数据控制语言 (Data Control Language, DCL) 是一种可对数据访问权进行控制的指令，它可以控制特定用户账户对数据表、查看表、预存程序、用户自定义函数等数据库对象的控制权。</p>
+<p>DCL 的核心指令是 <code>GRANT</code>、<code>REVOKE</code>。</p>
+<p>DCL 以<strong>控制用户的访问权限</strong>为主，因此其指令作法并不复杂，可利用 DCL 控制的权限有：<code>CONNECT</code>、<code>SELECT</code>、<code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code>、<code>EXECUTE</code>、<code>USAGE</code>、<code>REFERENCES</code>。</p>
+<p>根据不同的 DBMS 以及不同的安全性实体，其支持的权限控制也有所不同。</p>
+<p>（以下为 DML 语句用法）</p>
+<h2 id="二、增删改查"><a href="#二、增删改查" class="headerlink" title="二、增删改查"></a>二、增删改查</h2><blockquote>
+<p>增删改查，又称为 CRUD，数据库基本操作中的基本操作。</p>
+</blockquote>
+<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><blockquote>
+<ul>
+<li><code>INSERT INTO</code> 语句用于向表中插入新记录。</li>
+</ul>
+</blockquote>
+<p><strong>插入完整的行</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO user</span><br><span class="line">VALUES (10, &#x27;root&#x27;, &#x27;root&#x27;, &#x27;xxxx@163.com&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>插入行的一部分</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO user(username, password, email)</span><br><span class="line">VALUES (&#x27;admin&#x27;, &#x27;admin&#x27;, &#x27;xxxx@163.com&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>插入查询出来的数据</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO user(username)</span><br><span class="line">SELECT name</span><br><span class="line">FROM account;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3><blockquote>
+<ul>
+<li><code>UPDATE</code> 语句用于更新表中的记录。</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE user</span><br><span class="line">SET username=&#x27;robot&#x27;, password=&#x27;robot&#x27;</span><br><span class="line">WHERE username = &#x27;root&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><blockquote>
+<ul>
+<li><code>DELETE</code> 语句用于删除表中的记录。</li>
+<li><code>TRUNCATE TABLE</code> 可以清空表，也就是删除所有行。</li>
+</ul>
+</blockquote>
+<p><strong>删除表中的指定数据</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM user</span><br><span class="line">WHERE username = &#x27;robot&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>清空表中的数据</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRUNCATE TABLE user;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><blockquote>
+<ul>
+<li><p><code>SELECT</code> 语句用于从数据库中查询数据。</p>
+</li>
+<li><p><code>DISTINCT</code> 用于返回唯一不同的值。它作用于所有列，也就是说所有列的值都相同才算相同。</p>
+</li>
+<li><p><code>LIMIT</code> 限制返回的行数。可以有两个参数，第一个参数为起始行，从 0 开始；第二个参数为返回的总行数。</p>
+</li>
+<li><ul>
+<li><code>ASC</code> ：升序（默认）</li>
+<li><code>DESC</code> ：降序</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>查询单列</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_name</span><br><span class="line">FROM products;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查询多列</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_name, prod_price</span><br><span class="line">FROM products;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查询所有列</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ELECT *</span><br><span class="line">FROM products;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查询不同的值</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT</span><br><span class="line">vend_id FROM products;</span><br></pre></td></tr></table></figure>
+
+<p><strong>限制查询结果</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-- 返回前 5 行</span><br><span class="line">SELECT * FROM mytable LIMIT 5;</span><br><span class="line">SELECT * FROM mytable LIMIT 0, 5;</span><br><span class="line">-- 返回第 3 ~ 5 行</span><br><span class="line">SELECT * FROM mytable LIMIT 2, 3;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、子查询"><a href="#三、子查询" class="headerlink" title="三、子查询"></a>三、子查询</h2><blockquote>
+<p>子查询是嵌套在较大查询中的 SQL 查询。子查询也称为<strong>内部查询</strong>或<strong>内部选择</strong>，而包含子查询的语句也称为<strong>外部查询</strong>或<strong>外部选择</strong>。</p>
+</blockquote>
+<ul>
+<li><p>子查询可以嵌套在 <code>SELECT</code>，<code>INSERT</code>，<code>UPDATE</code> 或 <code>DELETE</code> 语句内或另一个子查询中。</p>
+</li>
+<li><p>子查询通常会在另一个 <code>SELECT</code> 语句的 <code>WHERE</code> 子句中添加。</p>
+</li>
+<li><p>您可以使用比较运算符，如 <code>&gt;</code>，<code>&lt;</code>，或 <code>=</code>。比较运算符也可以是多行运算符，如 <code>IN</code>，<code>ANY</code> 或 <code>ALL</code>。</p>
+</li>
+<li><p>子查询必须被圆括号 <code>()</code> 括起来。</p>
+</li>
+<li><p>内部查询首先在其父查询之前执行，以便可以将内部查询的结果传递给外部查询。执行过程可以参考下图：</p>
+<p><img src="https://file.52xiaobei.cn/PXhiJPqfypOdn0pj0EGUcfcbt8znk1Ud/02.jpeg" alt="图片"></p>
+</li>
+</ul>
+<p><strong>子查询的子查询</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name, cust_contact</span><br><span class="line">FROM customers</span><br><span class="line">WHERE cust_id IN (SELECT cust_id</span><br><span class="line">                  FROM orders</span><br><span class="line">                  WHERE order_num IN (SELECT order_num</span><br><span class="line">                                      FROM orderitems</span><br><span class="line">                                      WHERE prod_id = &#x27;RGAN01&#x27;));</span><br></pre></td></tr></table></figure>
+
+<h3 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h3><ul>
+<li><code>WHERE</code> 子句用于过滤记录，即缩小访问数据的范围。</li>
+<li><code>WHERE</code> 后跟一个返回 <code>true</code> 或 <code>false</code> 的条件。</li>
+<li><code>WHERE</code> 可以与 <code>SELECT</code>，<code>UPDATE</code> 和 <code>DELETE</code> 一起使用。</li>
+<li>可以在 <code>WHERE</code> 子句中使用的操作符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&#x3D;</td>
+<td align="left">等于</td>
+</tr>
+<tr>
+<td align="left">&lt;&gt;</td>
+<td align="left">不等于。注释：在 SQL 的一些版本中，该操作符可被写成 !&#x3D;</td>
+</tr>
+<tr>
+<td align="left">&gt;</td>
+<td align="left">大于</td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">小于</td>
+</tr>
+<tr>
+<td align="left">&gt;&#x3D;</td>
+<td align="left">大于等于</td>
+</tr>
+<tr>
+<td align="left">&lt;&#x3D;</td>
+<td align="left">小于等于</td>
+</tr>
+<tr>
+<td align="left">BETWEEN</td>
+<td align="left">在某个范围内</td>
+</tr>
+<tr>
+<td align="left">LIKE</td>
+<td align="left">搜索某种模式</td>
+</tr>
+<tr>
+<td align="left">IN</td>
+<td align="left">指定针对某个列的多个可能值</td>
+</tr>
+</tbody></table>
+<p><strong><code>SELECT</code> 语句中的 <code>WHERE</code> 子句</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM Customers</span><br><span class="line">WHERE cust_name = &#x27;Kids Place&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>UPDATE</code> 语句中的 <code>WHERE</code> 子句</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE Customers</span><br><span class="line">SET cust_name = &#x27;Jack Jones&#x27;</span><br><span class="line">WHERE cust_name = &#x27;Kids Place&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>DELETE</code> 语句中的 <code>WHERE</code> 子句</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM Customers</span><br><span class="line">WHERE cust_name = &#x27;Kids Place&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="IN-和-BETWEEN"><a href="#IN-和-BETWEEN" class="headerlink" title="IN 和 BETWEEN"></a>IN 和 BETWEEN</h3><ul>
+<li><code>IN</code> 操作符在 <code>WHERE</code> 子句中使用，作用是在指定的几个特定值中任选一个值。</li>
+<li><code>BETWEEN</code> 操作符在 <code>WHERE</code> 子句中使用，作用是选取介于某个范围内的值。</li>
+</ul>
+<p><strong>IN 示例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM products</span><br><span class="line">WHERE vend_id IN (&#x27;DLL01&#x27;, &#x27;BRS01&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>BETWEEN 示例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM products</span><br><span class="line">WHERE prod_price BETWEEN 3 AND 5;</span><br></pre></td></tr></table></figure>
+
+<h3 id="AND、OR、NOT"><a href="#AND、OR、NOT" class="headerlink" title="AND、OR、NOT"></a>AND、OR、NOT</h3><ul>
+<li><code>AND</code>、<code>OR</code>、<code>NOT</code> 是用于对过滤条件的逻辑处理指令。</li>
+<li><code>AND</code> 优先级高于 <code>OR</code>，为了明确处理顺序，可以使用 <code>()</code>。</li>
+<li><code>AND</code> 操作符表示左右条件都要满足。</li>
+<li><code>OR</code> 操作符表示左右条件满足任意一个即可。</li>
+<li><code>NOT</code> 操作符用于否定一个条件。</li>
+</ul>
+<p><strong>AND 示例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_name, prod_price</span><br><span class="line">FROM products</span><br><span class="line">WHERE vend_id = &#x27;DLL01&#x27; AND prod_price &lt;= 4;</span><br></pre></td></tr></table></figure>
+
+<p><strong>OR 示例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_name, prod_price</span><br><span class="line">FROM products</span><br><span class="line">WHERE vend_id = &#x27;DLL01&#x27; OR vend_id = &#x27;BRS01&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>NOT 示例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM products</span><br><span class="line">WHERE prod_price NOT BETWEEN 3 AND 5;</span><br></pre></td></tr></table></figure>
+
+<h3 id="LIKE"><a href="#LIKE" class="headerlink" title="LIKE"></a>LIKE</h3><ul>
+<li><code>LIKE</code> 操作符在 <code>WHERE</code> 子句中使用，作用是确定字符串是否匹配模式。</li>
+<li>只有字段是文本值时才使用 <code>LIKE</code>。</li>
+<li><code>LIKE</code> 支持两个通配符匹配选项：<code>%</code> 和 <code>_</code>。</li>
+<li>不要滥用通配符，通配符位于开头处匹配会非常慢。</li>
+<li><code>%</code> 表示任何字符出现任意次数。</li>
+<li><code>_</code> 表示任何字符出现一次。</li>
+</ul>
+<p><strong>% 示例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_name, prod_price</span><br><span class="line">FROM products</span><br><span class="line">WHERE prod_name LIKE &#x27;%bean bag%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>_ 示例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT prod_id, prod_name, prod_price</span><br><span class="line">FROM products</span><br><span class="line">WHERE prod_name LIKE &#x27;__ inch teddy bear&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、连接和组合"><a href="#四、连接和组合" class="headerlink" title="四、连接和组合"></a>四、连接和组合</h2><h3 id="连接（JOIN）"><a href="#连接（JOIN）" class="headerlink" title="连接（JOIN）"></a>连接（JOIN）</h3><blockquote>
+<ul>
+<li><p>如果一个 <code>JOIN</code> 至少有一个公共字段并且它们之间存在关系，则该 <code>JOIN</code> 可以在两个或多个表上工作。</p>
+</li>
+<li><p>连接用于连接多个表，使用 <code>JOIN</code> 关键字，并且条件语句使用 <code>ON</code> 而不是 <code>WHERE</code>。</p>
+</li>
+<li><p><code>JOIN</code> 保持基表（结构和数据）不变。</p>
+</li>
+<li><p><code>JOIN</code> 有两种连接类型：内连接和外连接。</p>
+</li>
+<li><p>内连接又称等值连接，使用 INNER <code>JOIN</code> 关键字。在没有条件语句的情况下返回笛卡尔积。</p>
+</li>
+<li><ul>
+<li>自连接可以看成内连接的一种，只是连接的表是自身而已。</li>
+</ul>
+</li>
+<li><p>自然连接是把同名列通过 &#x3D; 测试连接起来的，同名列可以有多个。</p>
+</li>
+<li><p>内连接 vs 自然连接</p>
+</li>
+<li><ul>
+<li>内连接提供连接的列，而自然连接自动连接所有同名列。</li>
+</ul>
+</li>
+<li><p>外连接返回一个表中的所有行，并且仅返回来自次表中满足连接条件的那些行，即两个表中的列是相等的。外连接分为左外连接、右外连接、全外连接（Mysql 不支持）。</p>
+</li>
+<li><ul>
+<li>左外连接就是保留左表没有关联的行。</li>
+<li>右外连接就是保留右表没有关联的行。</li>
+</ul>
+</li>
+<li><p>连接 vs 子查询</p>
+</li>
+<li><ul>
+<li>连接可以替换子查询，并且比子查询的效率一般会更快。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://file.52xiaobei.cn/X8ExLQt2mApEsqWEcKRdBjfxiRyohqyH/03.jpeg" alt="图片"></p>
+</blockquote>
+<h4 id="内连接（INNER-JOIN）"><a href="#内连接（INNER-JOIN）" class="headerlink" title="内连接（INNER JOIN）"></a>内连接（INNER JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT vend_name, prod_name, prod_price</span><br><span class="line">FROM vendors INNER JOIN products</span><br><span class="line">ON vendors.vend_id = products.vend_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT c1.cust_id, c1.cust_name, c1.cust_contact</span><br><span class="line">FROM customers c1, customers c2WHERE c1.cust_name = c2.cust_name</span><br><span class="line">AND c2.cust_contact = &#x27;Jim Jones&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="自然连接（NATURAL-JOIN）"><a href="#自然连接（NATURAL-JOIN）" class="headerlink" title="自然连接（NATURAL JOIN）"></a>自然连接（NATURAL JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM Products</span><br><span class="line">NATURAL JOIN Customers;</span><br></pre></td></tr></table></figure>
+
+<h4 id="左连接（LEFT-JOIN）"><a href="#左连接（LEFT-JOIN）" class="headerlink" title="左连接（LEFT JOIN）"></a>左连接（LEFT JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT customers.cust_id, orders.order_num</span><br><span class="line">FROM customers LEFT JOIN orders</span><br><span class="line">ON customers.cust_id = orders.cust_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="右连接（RIGHT-JOIN）"><a href="#右连接（RIGHT-JOIN）" class="headerlink" title="右连接（RIGHT JOIN）"></a>右连接（RIGHT JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT customers.cust_id, orders.order_num</span><br><span class="line">FROM customers RIGHT JOIN orders</span><br><span class="line">ON customers.cust_id = orders.cust_id;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组合（UNION）"><a href="#组合（UNION）" class="headerlink" title="组合（UNION）"></a>组合（UNION）</h3><ul>
+<li><p><code>UNION</code> 运算符将两个或更多查询的结果组合起来，并生成一个结果集，其中包含来自 <code>UNION</code> 中参与查询的提取行。</p>
+</li>
+<li><p><code>UNION</code> 基本规则</p>
+</li>
+<li><ul>
+<li>所有查询的列数和列顺序必须相同。</li>
+<li>每个查询中涉及表的列的数据类型必须相同或兼容。</li>
+<li>通常返回的列名取自第一个查询。</li>
+</ul>
+</li>
+<li><p>默认会去除相同行，如果需要保留相同行，使用 <code>UNION ALL</code>。</p>
+</li>
+<li><p>只能包含一个 <code>ORDER BY</code> 子句，并且必须位于语句的最后。</p>
+</li>
+<li><p>应用场景</p>
+</li>
+<li><ul>
+<li>在一个查询中从不同的表返回结构数据。</li>
+<li>对一个表执行多个查询，按一个查询返回数据。</li>
+</ul>
+</li>
+</ul>
+<p><strong>组合查询</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name, cust_contact, cust_email</span><br><span class="line">FROM customers</span><br><span class="line">WHERE cust_state IN (&#x27;IL&#x27;, &#x27;IN&#x27;, &#x27;MI&#x27;)</span><br><span class="line">UNION</span><br><span class="line">SELECT cust_name, cust_contact, cust_email</span><br><span class="line">FROM customers</span><br><span class="line">WHERE cust_name = &#x27;Fun4All&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="JOIN-vs-UNION"><a href="#JOIN-vs-UNION" class="headerlink" title="JOIN vs UNION"></a>JOIN vs UNION</h3><ul>
+<li><p>JOIN vs UNION</p>
+</li>
+<li><ul>
+<li><code>JOIN</code> 中连接表的列可能不同，但在 <code>UNION</code> 中，所有查询的列数和列顺序必须相同。</li>
+<li><code>UNION</code> 将查询之后的行放在一起（垂直放置），但 <code>JOIN</code> 将查询之后的列放在一起（水平放置），即它构成一个笛卡尔积。</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、函数"><a href="#五、函数" class="headerlink" title="五、函数"></a>五、函数</h2><blockquote>
+<p>🔔 注意：不同数据库的函数往往各不相同，因此不可移植。本节主要以 Mysql 的函数为例。</p>
+</blockquote>
+<h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>LEFT()</code>、<code>RIGHT()</code></td>
+<td align="left">左边或者右边的字符</td>
+</tr>
+<tr>
+<td align="left"><code>LOWER()</code>、<code>UPPER()</code></td>
+<td align="left">转换为小写或者大写</td>
+</tr>
+<tr>
+<td align="left"><code>LTRIM()</code>、<code>RTIM()</code></td>
+<td align="left">去除左边或者右边的空格</td>
+</tr>
+<tr>
+<td align="left"><code>LENGTH()</code></td>
+<td align="left">长度</td>
+</tr>
+<tr>
+<td align="left"><code>SOUNDEX()</code></td>
+<td align="left">转换为语音值</td>
+</tr>
+</tbody></table>
+<p>其中， <strong>SOUNDEX()</strong> 可以将一个字符串转换为描述其语音表示的字母数字模式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM mytable</span><br><span class="line">WHERE SOUNDEX(col1) = SOUNDEX(&#x27;apple&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="日期和时间处理"><a href="#日期和时间处理" class="headerlink" title="日期和时间处理"></a>日期和时间处理</h3><ul>
+<li>日期格式：<code>YYYY-MM-DD</code></li>
+<li>时间格式：<code>HH:MM:SS</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">函 数</th>
+<th align="left">说 明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>AddDate()</code></td>
+<td align="left">增加一个日期（天、周等）</td>
+</tr>
+<tr>
+<td align="left"><code>AddTime()</code></td>
+<td align="left">增加一个时间（时、分等）</td>
+</tr>
+<tr>
+<td align="left"><code>CurDate()</code></td>
+<td align="left">返回当前日期</td>
+</tr>
+<tr>
+<td align="left"><code>CurTime()</code></td>
+<td align="left">返回当前时间</td>
+</tr>
+<tr>
+<td align="left"><code>Date()</code></td>
+<td align="left">返回日期时间的日期部分</td>
+</tr>
+<tr>
+<td align="left"><code>DateDiff()</code></td>
+<td align="left">计算两个日期之差</td>
+</tr>
+<tr>
+<td align="left"><code>Date_Add()</code></td>
+<td align="left">高度灵活的日期运算函数</td>
+</tr>
+<tr>
+<td align="left"><code>Date_Format()</code></td>
+<td align="left">返回一个格式化的日期或时间串</td>
+</tr>
+<tr>
+<td align="left"><code>Day()</code></td>
+<td align="left">返回一个日期的天数部分</td>
+</tr>
+<tr>
+<td align="left"><code>DayOfWeek()</code></td>
+<td align="left">对于一个日期，返回对应的星期几</td>
+</tr>
+<tr>
+<td align="left"><code>Hour()</code></td>
+<td align="left">返回一个时间的小时部分</td>
+</tr>
+<tr>
+<td align="left"><code>Minute()</code></td>
+<td align="left">返回一个时间的分钟部分</td>
+</tr>
+<tr>
+<td align="left"><code>Month()</code></td>
+<td align="left">返回一个日期的月份部分</td>
+</tr>
+<tr>
+<td align="left"><code>Now()</code></td>
+<td align="left">返回当前日期和时间</td>
+</tr>
+<tr>
+<td align="left"><code>Second()</code></td>
+<td align="left">返回一个时间的秒部分</td>
+</tr>
+<tr>
+<td align="left"><code>Time()</code></td>
+<td align="left">返回一个日期时间的时间部分</td>
+</tr>
+<tr>
+<td align="left"><code>Year()</code></td>
+<td align="left">返回一个日期的年份部分</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT NOW();</span><br><span class="line">2018-4-14 20:25:11</span><br></pre></td></tr></table></figure>
+
+<h3 id="数值处理"><a href="#数值处理" class="headerlink" title="数值处理"></a>数值处理</h3><table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">SIN()</td>
+<td align="left">正弦</td>
+</tr>
+<tr>
+<td align="left">COS()</td>
+<td align="left">余弦</td>
+</tr>
+<tr>
+<td align="left">TAN()</td>
+<td align="left">正切</td>
+</tr>
+<tr>
+<td align="left">ABS()</td>
+<td align="left">绝对值</td>
+</tr>
+<tr>
+<td align="left">SQRT()</td>
+<td align="left">平方根</td>
+</tr>
+<tr>
+<td align="left">MOD()</td>
+<td align="left">余数</td>
+</tr>
+<tr>
+<td align="left">EXP()</td>
+<td align="left">指数</td>
+</tr>
+<tr>
+<td align="left">PI()</td>
+<td align="left">圆周率</td>
+</tr>
+<tr>
+<td align="left">RAND()</td>
+<td align="left">随机数</td>
+</tr>
+</tbody></table>
+<h3 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h3><table>
+<thead>
+<tr>
+<th align="left">函 数</th>
+<th align="left">说 明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>AVG()</code></td>
+<td align="left">返回某列的平均值</td>
+</tr>
+<tr>
+<td align="left"><code>COUNT()</code></td>
+<td align="left">返回某列的行数</td>
+</tr>
+<tr>
+<td align="left"><code>MAX()</code></td>
+<td align="left">返回某列的最大值</td>
+</tr>
+<tr>
+<td align="left"><code>MIN()</code></td>
+<td align="left">返回某列的最小值</td>
+</tr>
+<tr>
+<td align="left"><code>SUM()</code></td>
+<td align="left">返回某列值之和</td>
+</tr>
+</tbody></table>
+<p><code>AVG()</code> 会忽略 NULL 行。</p>
+<p>使用 DISTINCT 可以让汇总函数值汇总不同的值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT AVG(DISTINCT col1) AS avg_col</span><br><span class="line">FROM mytable</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、排序和分组"><a href="#六、排序和分组" class="headerlink" title="六、排序和分组"></a>六、排序和分组</h2><h3 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h3><ul>
+<li><p><code>ORDER BY</code> 用于对结果集进行排序。</p>
+</li>
+<li><ul>
+<li><code>ASC</code> ：升序（默认）</li>
+<li><code>DESC</code> ：降序</li>
+</ul>
+</li>
+<li><p>可以按多个列进行排序，并且为每个列指定不同的排序方式</p>
+</li>
+</ul>
+<p><strong>指定多个列的排序方向</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM products</span><br><span class="line">ORDER BY prod_price DESC, prod_name ASC;</span><br></pre></td></tr></table></figure>
+
+<h3 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h3><ul>
+<li><code>GROUP BY</code> 子句将记录分组到汇总行中。</li>
+<li><code>GROUP BY</code> 为每个组返回一个记录。</li>
+<li><code>GROUP BY</code> 通常还涉及聚合：COUNT，MAX，SUM，AVG 等。</li>
+<li><code>GROUP BY</code> 可以按一列或多列进行分组。</li>
+<li><code>GROUP BY</code> 按分组字段进行排序后，<code>ORDER BY</code> 可以以汇总字段来进行排序。</li>
+</ul>
+<p><strong>分组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name, COUNT(cust_address) AS addr_num</span><br><span class="line">FROM Customers GROUP BY cust_name;</span><br></pre></td></tr></table></figure>
+
+<p><strong>分组后排序</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name, COUNT(cust_address) AS addr_num</span><br><span class="line">FROM Customers GROUP BY cust_name</span><br><span class="line">ORDER BY cust_name DESC;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HAVING"><a href="#HAVING" class="headerlink" title="HAVING"></a>HAVING</h3><ul>
+<li><p><code>HAVING</code> 用于对汇总的 <code>GROUP BY</code> 结果进行过滤。</p>
+</li>
+<li><p><code>HAVING</code> 要求存在一个 <code>GROUP BY</code> 子句。</p>
+</li>
+<li><p><code>WHERE</code> 和 <code>HAVING</code> 可以在相同的查询中。</p>
+</li>
+<li><p><code>HAVING</code> vs <code>WHERE</code></p>
+</li>
+<li><ul>
+<li><code>WHERE</code> 和 <code>HAVING</code> 都是用于过滤。</li>
+<li><code>HAVING</code> 适用于汇总的组记录；而 WHERE 适用于单个记录。</li>
+</ul>
+</li>
+</ul>
+<p><strong>使用 WHERE 和 HAVING 过滤数据</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT cust_name, COUNT(*) AS num</span><br><span class="line">FROM Customers</span><br><span class="line">WHERE cust_email IS NOT NULL</span><br><span class="line">GROUP BY cust_name</span><br><span class="line">HAVING COUNT(*) &gt;= 1;</span><br></pre></td></tr></table></figure>
+
+<p>（以下为 DDL 语句用法）</p>
+<h2 id="七、数据定义"><a href="#七、数据定义" class="headerlink" title="七、数据定义"></a>七、数据定义</h2><blockquote>
+<p>DDL 的主要功能是定义数据库对象（如：数据库、数据表、视图、索引等）。</p>
+</blockquote>
+<h3 id="数据库（DATABASE）"><a href="#数据库（DATABASE）" class="headerlink" title="数据库（DATABASE）"></a>数据库（DATABASE）</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE test;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE test;</span><br></pre></td></tr></table></figure>
+
+<h4 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE test;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据表（TABLE）"><a href="#数据表（TABLE）" class="headerlink" title="数据表（TABLE）"></a>数据表（TABLE）</h3><h4 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h4><p><strong>普通创建</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE user (</span><br><span class="line">  id int(10) unsigned NOT NULL COMMENT &#x27;Id&#x27;,</span><br><span class="line">  username varchar(64) NOT NULL DEFAULT &#x27;default&#x27; COMMENT &#x27;用户名&#x27;,</span><br><span class="line">  password varchar(64) NOT NULL DEFAULT &#x27;default&#x27; COMMENT &#x27;密码&#x27;,</span><br><span class="line">  email varchar(64) NOT NULL DEFAULT &#x27;default&#x27; COMMENT &#x27;邮箱&#x27;</span><br><span class="line">) COMMENT=&#x27;用户表&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>根据已有的表创建新表</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE vip_user AS</span><br><span class="line">SELECT * FROM user;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE user;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h4><p><strong>添加列</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE user</span><br><span class="line">ADD age int(3);</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除列</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE user</span><br><span class="line">DROP COLUMN age;</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改列</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE `user`</span><br><span class="line">MODIFY COLUMN age tinyint;</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加主键</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE user</span><br><span class="line">ADD PRIMARY KEY (id);</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除主键</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE user</span><br><span class="line">DROP PRIMARY KEY;</span><br></pre></td></tr></table></figure>
+
+<h3 id="视图（VIEW）"><a href="#视图（VIEW）" class="headerlink" title="视图（VIEW）"></a>视图（VIEW）</h3><blockquote>
+<ul>
+<li><p>定义</p>
+</li>
+<li><ul>
+<li>视图是基于 SQL 语句的结果集的可视化的表。</li>
+<li>视图是虚拟的表，本身不包含数据，也就不能对其进行索引操作。对视图的操作和对普通表的操作一样。</li>
+</ul>
+</li>
+<li><p>作用</p>
+</li>
+<li><ul>
+<li>简化复杂的 SQL 操作，比如复杂的联结；</li>
+<li>只使用实际表的一部分数据；</li>
+<li>通过只给用户访问视图的权限，保证数据的安全性；</li>
+<li>更改数据格式和表示。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE VIEW top_10_user_view AS</span><br><span class="line">SELECT id, username</span><br><span class="line">FROM user</span><br><span class="line">WHERE id &lt; 10;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除视图"><a href="#删除视图" class="headerlink" title="删除视图"></a>删除视图</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP VIEW top_10_user_view;</span><br></pre></td></tr></table></figure>
+
+<h3 id="索引（INDEX）"><a href="#索引（INDEX）" class="headerlink" title="索引（INDEX）"></a>索引（INDEX）</h3><blockquote>
+<ul>
+<li><p>作用</p>
+</li>
+<li><ul>
+<li>通过索引可以更加快速高效地查询数据。</li>
+<li>用户无法看到索引，它们只能被用来加速查询。</li>
+</ul>
+</li>
+<li><p>注意</p>
+</li>
+<li><ul>
+<li>更新一个包含索引的表需要比更新一个没有索引的表花费更多的时间，这是由于索引本身也需要更新。因此，理想的做法是仅仅在常常被搜索的列（以及表）上面创建索引。</li>
+</ul>
+</li>
+<li><p>唯一索引</p>
+</li>
+<li><ul>
+<li>唯一索引表明此索引的每一个索引值只对应唯一的数据记录。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX user_index</span><br><span class="line">ON user (id);</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建唯一索引"><a href="#创建唯一索引" class="headerlink" title="创建唯一索引"></a>创建唯一索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE UNIQUE INDEX user_index</span><br><span class="line">ON user (id);</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE user</span><br><span class="line">DROP INDEX user_index;</span><br></pre></td></tr></table></figure>
+
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><blockquote>
+<p>SQL 约束用于规定表中的数据规则。</p>
+</blockquote>
+<ul>
+<li><p>如果存在违反约束的数据行为，行为会被约束终止。</p>
+</li>
+<li><p>约束可以在创建表时规定（通过 CREATE TABLE 语句），或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
+</li>
+<li><p>约束类型</p>
+</li>
+<li><ul>
+<li><code>NOT NULL</code> - 指示某列不能存储 NULL 值。</li>
+<li><code>UNIQUE</code> - 保证某列的每行必须有唯一的值。</li>
+<li><code>PRIMARY KEY</code> - NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</li>
+<li><code>FOREIGN KEY</code> - 保证一个表中的数据匹配另一个表中的值的参照完整性。</li>
+<li><code>CHECK</code> - 保证列中的值符合指定的条件。</li>
+<li><code>DEFAULT</code> - 规定没有给列赋值时的默认值。</li>
+</ul>
+</li>
+</ul>
+<p>创建表时使用约束条件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Users (</span><br><span class="line">  Id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT &#x27;自增Id&#x27;,</span><br><span class="line">  Username VARCHAR(64) NOT NULL UNIQUE DEFAULT &#x27;default&#x27; COMMENT &#x27;用户名&#x27;,</span><br><span class="line">  Password VARCHAR(64) NOT NULL DEFAULT &#x27;default&#x27; COMMENT &#x27;密码&#x27;,</span><br><span class="line">  Email VARCHAR(64) NOT NULL DEFAULT &#x27;default&#x27; COMMENT &#x27;邮箱地址&#x27;,</span><br><span class="line">  Enabled TINYINT(4) DEFAULT NULL COMMENT &#x27;是否有效&#x27;,</span><br><span class="line">  PRIMARY KEY (Id)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT=&#x27;用户表&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>（以下为 TCL 语句用法）</p>
+<h2 id="八、事务处理"><a href="#八、事务处理" class="headerlink" title="八、事务处理"></a>八、事务处理</h2><blockquote>
+<ul>
+<li><p>不能回退 SELECT 语句，回退 SELECT 语句也没意义；也不能回退 CREATE 和 DROP 语句。</p>
+</li>
+<li><p><strong>MySQL 默认是隐式提交</strong>，每执行一条语句就把这条语句当成一个事务然后进行提交。当出现 <code>START TRANSACTION</code> 语句时，会关闭隐式提交；当 <code>COMMIT</code> 或 <code>ROLLBACK</code> 语句执行后，事务会自动关闭，重新恢复隐式提交。</p>
+</li>
+<li><p>通过 <code>set autocommit=0</code> 可以取消自动提交，直到 <code>set autocommit=1</code> 才会提交；autocommit 标记是针对每个连接而不是针对服务器的。</p>
+</li>
+<li><p>指令</p>
+</li>
+<li><ul>
+<li><code>START TRANSACTION</code> - 指令用于标记事务的起始点。</li>
+<li><code>SAVEPOINT</code> - 指令用于创建保留点。</li>
+<li><code>ROLLBACK TO</code> - 指令用于回滚到指定的保留点；如果没有设置保留点，则回退到 <code>START TRANSACTION</code> 语句处。</li>
+<li><code>COMMIT</code> - 提交事务。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-- 开始事务</span><br><span class="line">START TRANSACTION;</span><br><span class="line"></span><br><span class="line">-- 插入操作 AINSERT INTO `user`</span><br><span class="line">VALUES (1, &#x27;root1&#x27;, &#x27;root1&#x27;, &#x27;xxxx@163.com&#x27;);</span><br><span class="line"></span><br><span class="line">-- 创建保留点 updateA</span><br><span class="line">SAVEPOINT updateA;</span><br><span class="line"></span><br><span class="line">-- 插入操作 B</span><br><span class="line">INSERT INTO `user`</span><br><span class="line">VALUES (2, &#x27;root2&#x27;, &#x27;root2&#x27;, &#x27;xxxx@163.com&#x27;);</span><br><span class="line"></span><br><span class="line">-- 回滚到保留点 updateA</span><br><span class="line">ROLLBACK TO updateA;</span><br><span class="line"></span><br><span class="line">-- 提交事务，只有操作 A 生效</span><br><span class="line">COMMIT;</span><br></pre></td></tr></table></figure>
+
+<p>（以下为 DCL 语句用法）</p>
+<h2 id="九、权限控制"><a href="#九、权限控制" class="headerlink" title="九、权限控制"></a>九、权限控制</h2><blockquote>
+<ul>
+<li><p>GRANT 和 REVOKE 可在几个层次上控制访问权限：</p>
+</li>
+<li><ul>
+<li>整个服务器，使用 GRANT ALL 和 REVOKE ALL；</li>
+<li>整个数据库，使用 ON database.*；</li>
+<li>特定的表，使用 ON database.table；</li>
+<li>特定的列；</li>
+<li>特定的存储过程。</li>
+</ul>
+</li>
+<li><p>新创建的账户没有任何权限。</p>
+</li>
+<li><p>账户用 username@host 的形式定义，username@% 使用的是默认主机名。</p>
+</li>
+<li><p>MySQL 的账户信息保存在 mysql 这个数据库中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">USE mysql;</span><br><span class="line">SELECT user FROM user;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<h3 id="创建账户"><a href="#创建账户" class="headerlink" title="创建账户"></a>创建账户</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER myuser IDENTIFIED BY &#x27;mypassword&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改账户名"><a href="#修改账户名" class="headerlink" title="修改账户名"></a>修改账户名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE user SET user=&#x27;newuser&#x27; WHERE user=&#x27;myuser&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除账户"><a href="#删除账户" class="headerlink" title="删除账户"></a>删除账户</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP USER myuser;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看权限"><a href="#查看权限" class="headerlink" title="查看权限"></a>查看权限</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW GRANTS FOR myuser;</span><br></pre></td></tr></table></figure>
+
+<h3 id="授予权限"><a href="#授予权限" class="headerlink" title="授予权限"></a>授予权限</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT SELECT, INSERT ON *.* TO myuser;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除权限"><a href="#删除权限" class="headerlink" title="删除权限"></a>删除权限</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE SELECT, INSERT ON *.* FROM myuser;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更改密码"><a href="#更改密码" class="headerlink" title="更改密码"></a>更改密码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET PASSWORD FOR myuser = &#x27;mypass&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="十、存储过程"><a href="#十、存储过程" class="headerlink" title="十、存储过程"></a>十、存储过程</h2><blockquote>
+<ul>
+<li><p>存储过程可以看成是对一系列 SQL 操作的批处理；</p>
+</li>
+<li><p>使用存储过程的好处</p>
+</li>
+<li><ul>
+<li>代码封装，保证了一定的安全性；</li>
+<li>代码复用；</li>
+<li>由于是预先编译，因此具有很高的性能。</li>
+</ul>
+</li>
+<li><p>创建存储过程</p>
+</li>
+<li><ul>
+<li>命令行中创建存储过程需要自定义分隔符，因为命令行是以 <code>;</code> 为结束符，而存储过程中也包含了分号，因此会错误把这部分分号当成是结束符，造成语法错误。</li>
+<li>包含 in、out 和 inout 三种参数。</li>
+<li>给变量赋值都需要用 select into 语句。</li>
+<li>每次只能给一个变量赋值，不支持集合的操作。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">DROP PROCEDURE IF EXISTS `proc_adder`;</span><br><span class="line">DELIMITER ;;</span><br><span class="line">CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_adder`(IN a int, IN b int, OUT sum int)</span><br><span class="line">BEGIN</span><br><span class="line">    DECLARE c int;</span><br><span class="line">    if a is null then set a = 0;</span><br><span class="line">    end if;</span><br><span class="line"></span><br><span class="line">    if b is null then set b = 0;</span><br><span class="line">    end if;</span><br><span class="line"></span><br><span class="line">    set sum  = a + b;</span><br><span class="line">END</span><br><span class="line">;;</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用存储过程"><a href="#使用存储过程" class="headerlink" title="使用存储过程"></a>使用存储过程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set @b=5;</span><br><span class="line">call proc_adder(2,@b,@s);</span><br><span class="line">select @s as sum;</span><br></pre></td></tr></table></figure>
+
+<h2 id="十一、游标"><a href="#十一、游标" class="headerlink" title="十一、游标"></a>十一、游标</h2><blockquote>
+<ul>
+<li><p>游标（cursor）是一个存储在 DBMS 服务器上的数据库查询，它不是一条 SELECT 语句，而是被该语句检索出来的结果集。</p>
+</li>
+<li><p>在存储过程中使用游标可以对一个结果集进行移动遍历。</p>
+</li>
+<li><p>游标主要用于交互式应用，其中用户需要对数据集中的任意行进行浏览和修改。</p>
+</li>
+<li><p>使用游标的四个步骤：</p>
+</li>
+<li><ul>
+<li>声明游标，这个过程没有实际检索出数据；</li>
+<li>打开游标；</li>
+<li>取出数据；</li>
+<li>关闭游标；</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER $</span><br><span class="line">CREATE  PROCEDURE getTotal()</span><br><span class="line">BEGIN</span><br><span class="line">    DECLARE total INT;</span><br><span class="line">    -- 创建接收游标数据的变量</span><br><span class="line">    DECLARE sid INT;</span><br><span class="line">    DECLARE sname VARCHAR(10);</span><br><span class="line">    -- 创建总数变量</span><br><span class="line">    DECLARE sage INT;</span><br><span class="line">    -- 创建结束标志变量    DECLARE done INT DEFAULT false;</span><br><span class="line">    -- 创建游标</span><br><span class="line">    DECLARE cur CURSOR FOR SELECT id,name,age from cursor_table where age&gt;30;</span><br><span class="line">    -- 指定游标循环结束时的返回值</span><br><span class="line">    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = true;</span><br><span class="line">    SET total = 0;</span><br><span class="line">    OPEN cur;</span><br><span class="line">    FETCH cur INTO sid, sname, sage;</span><br><span class="line">    WHILE(NOT done)</span><br><span class="line">    DO</span><br><span class="line">        SET total = total + 1;</span><br><span class="line">        FETCH cur INTO sid, sname, sage;</span><br><span class="line">    END WHILE;</span><br><span class="line"></span><br><span class="line">    CLOSE cur;</span><br><span class="line">    SELECT total;</span><br><span class="line">END $</span><br><span class="line">DELIMITER ;</span><br><span class="line"></span><br><span class="line">-- 调用存储过程</span><br><span class="line">call getTotal();</span><br></pre></td></tr></table></figure>
+
+<h2 id="十二、触发器"><a href="#十二、触发器" class="headerlink" title="十二、触发器"></a>十二、触发器</h2><blockquote>
+<p>触发器是一种与表操作有关的数据库对象，当触发器所在表上出现指定事件时，将调用该对象，即表的操作事件触发表上的触发器的执行。</p>
+</blockquote>
+<p>可以使用触发器来进行审计跟踪，把修改记录到另外一张表中。</p>
+<p>MySQL 不允许在触发器中使用 CALL 语句 ，也就是不能调用存储过程。</p>
+<p><strong><code>BEGIN</code> 和 <code>END</code></strong></p>
+<p>当触发器的触发条件满足时，将会执行 <code>BEGIN</code> 和 <code>END</code> 之间的触发器执行动作。</p>
+<blockquote>
+<p>🔔 注意：在 MySQL 中，分号 <code>;</code> 是语句结束的标识符，遇到分号表示该段语句已经结束，MySQL 可以开始执行了。因此，解释器遇到触发器执行动作中的分号后就开始执行，然后会报错，因为没有找到和 BEGIN 匹配的 END。</p>
+<p>这时就会用到 <code>DELIMITER</code> 命令（DELIMITER 是定界符，分隔符的意思）。它是一条命令，不需要语句结束标识，语法为：<code>DELIMITER new_delemiter</code>。<code>new_delemiter</code> 可以设为 1 个或多个长度的符号，默认的是分号 <code>;</code>，我们可以把它修改为其他符号，如 <code>$</code> - <code>DELIMITER $</code> 。在这之后的语句，以分号结束，解释器不会有什么反应，只有遇到了 <code>$</code>，才认为是语句结束。注意，使用完之后，我们还应该记得把它给修改回来。</p>
+</blockquote>
+<p><strong><code>NEW</code> 和 <code>OLD</code></strong></p>
+<ul>
+<li>MySQL 中定义了 <code>NEW</code> 和 <code>OLD</code> 关键字，用来表示触发器的所在表中，触发了触发器的那一行数据。</li>
+<li>在 <code>INSERT</code> 型触发器中，<code>NEW</code> 用来表示将要（<code>BEFORE</code>）或已经（<code>AFTER</code>）插入的新数据；</li>
+<li>在 <code>UPDATE</code> 型触发器中，<code>OLD</code> 用来表示将要或已经被修改的原数据，<code>NEW</code> 用来表示将要或已经修改为的新数据；</li>
+<li>在 <code>DELETE</code> 型触发器中，<code>OLD</code> 用来表示将要或已经被删除的原数据；</li>
+<li>使用方法： <code>NEW.columnName</code> （columnName 为相应数据表某一列名）</li>
+</ul>
+<h3 id="创建触发器"><a href="#创建触发器" class="headerlink" title="创建触发器"></a>创建触发器</h3><blockquote>
+<p>提示：为了理解触发器的要点，有必要先了解一下创建触发器的指令。</p>
+</blockquote>
+<p><code>CREATE TRIGGER</code> 指令用于创建触发器。</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER trigger_name</span><br><span class="line">trigger_time</span><br><span class="line">trigger_event</span><br><span class="line">ON table_name</span><br><span class="line">FOR EACH ROW</span><br><span class="line">BEGIN</span><br><span class="line">  trigger_statements</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li>trigger_name：触发器名</li>
+<li>trigger_time: 触发器的触发时机。取值为 <code>BEFORE</code> 或 <code>AFTER</code>。</li>
+<li>trigger_event: 触发器的监听事件。取值为 <code>INSERT</code>、<code>UPDATE</code> 或 <code>DELETE</code>。</li>
+<li>table_name: 触发器的监听目标。指定在哪张表上建立触发器。</li>
+<li>FOR EACH ROW: 行级监视，Mysql 固定写法，其他 DBMS 不同。</li>
+<li>trigger_statements: 触发器执行动作。是一条或多条 SQL 语句的列表，列表内的每条语句都必须用分号 <code>;</code> 来结尾。</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER $</span><br><span class="line">CREATE TRIGGER `trigger_insert_user`</span><br><span class="line">AFTER INSERT ON `user`</span><br><span class="line">FOR EACH ROW</span><br><span class="line">BEGIN</span><br><span class="line">    INSERT INTO `user_history`(user_id, operate_type, operate_time)</span><br><span class="line">    VALUES (NEW.id, &#x27;add a user&#x27;,  now());</span><br><span class="line">END $</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看触发器"><a href="#查看触发器" class="headerlink" title="查看触发器"></a>查看触发器</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW TRIGGERS;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除触发器"><a href="#删除触发器" class="headerlink" title="删除触发器"></a>删除触发器</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TRIGGER IF EXISTS trigger_insert_user;</span><br></pre></td></tr></table></figure>
+
+<p>转自：SQL数据库开发</p>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/12/05/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Python数据结构-队列</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/12/04/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Python数据结构-堆</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='/js/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        admin_email: "1113855149@qq.com",
+        appId: "JzXEzGL0Nd6hpMvSef3r2rM7-gzGzoHsz",
+        appKey: "wJdh8Ayj3yeBJJHkOjzoEybj",
+        avatar: "identicon",
+        placeholder: "请留下您宝贵的评论吧.",
+        notify: true,
+        visitor: true,
+        pageSize: 7,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://file.52xiaobei.cn/bFxrC3Wet70up4PB4sFV1FCXHCsud4JA/logo.png" class="soft-size--round soft-style--box" alt="XiaoBei">
+    
+    
+      <h2>XiaoBei</h2>
+    
+    
+      <p>做一个平凡而不平庸的码农.</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>16</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        8
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        12
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Django/">
+            Django (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Python/">
+            Python (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Docker/">
+            Docker (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Pytnon/">
+            Pytnon (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+            数据结构 (6)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Vue/">
+            Vue (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+            数据库 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Hexo/">
+            Hexo (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/DRF/" style="font-size: 10px;" class="tags-cloud-0">DRF</a> <a href="/tags/Django/" style="font-size: 10px;" class="tags-cloud-0">Django</a> <a href="/tags/Docker/" style="font-size: 13.33px;" class="tags-cloud-3">Docker</a> <a href="/tags/Docker%E5%9F%BA%E7%A1%80/" style="font-size: 13.33px;" class="tags-cloud-3">Docker基础</a> <a href="/tags/FastApi/" style="font-size: 10px;" class="tags-cloud-0">FastApi</a> <a href="/tags/Hexo/" style="font-size: 10px;" class="tags-cloud-0">Hexo</a> <a href="/tags/Python/" style="font-size: 20px;" class="tags-cloud-10">Python</a> <a href="/tags/Pytnon/" style="font-size: 13.33px;" class="tags-cloud-3">Pytnon</a> <a href="/tags/Vue/" style="font-size: 10px;" class="tags-cloud-0">Vue</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;" class="tags-cloud-0">关系型数据库</a> <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;" class="tags-cloud-0">搭建博客</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.67px;" class="tags-cloud-7">数据结构</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+    </div>
+     
+    <p>&copy; 2022 <a href="/" target="_blank">XiaoBei博客</a></p>
+
+    
+      <p><a href="https://beian.miit.gov.cn" target="_blank">京ICP备2020047212号</a></p>
+    
+
+    <p>作者 - <a href="https://52xiaobei.cn/about" target="_blank" rel="noopener noreferrer">XiaoBei</a> 项目 - <a href="https://github.com/LaoJiuGua" target="_blank" rel="noopener noreferrer author">GitHub</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>

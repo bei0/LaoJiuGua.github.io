@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.1.0">
+
+  
+    <meta name="description" content="XiaoBei">
+  
+
+  
+
+  
+    <meta name="author" content="XiaoBei博客">
+  
+
+  
+
+  
+
+  <title>FastApi微服务模式的规范实施 | 小北博客|一个喜欢计算机的小白程序员|博客分享学习经验</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://file.52xiaobei.cn/NAJVetU1zsuJFFnrJbMviOBCHgxNFJcS/236d7224a7b34fff8b7117ecc83f8c69.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          <img src="https://file.52xiaobei.cn/bFxrC3Wet70up4PB4sFV1FCXHCsud4JA/logo.png" alt="小    北" />
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/archives">归档</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友情</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">FastApi微服务模式的规范实施</h1>
+          <h2 class="title-sub-wrap">
+            <strong>XiaoBei博客</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-11-10T07:17:26.000Z" itemprop="datePublished">2021-11-10</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Python/">📒 Python</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/Python/">🏷️ Python</a></li>
+  
+    <li><a href="/tags/FastApi/">🏷️ FastApi</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="实现FastAPI服务抽象和关注点分离"><a href="#实现FastAPI服务抽象和关注点分离" class="headerlink" title="实现FastAPI服务抽象和关注点分离"></a>实现FastAPI服务抽象和关注点分离</h1><p><img src="https://d33wubrfki0l68.cloudfront.net/6e151ec6cdaf6029f28423494b5626fffa079a57/85707/_nuxt/img/20200811.cb5bb42.png" alt="Implementing FastAPI Services – Abstraction and Separation of Concerns"></p>
+<ul>
+<li><h2 id="FastAPI应用和服务结构，提供更易于维护的代码库"><a href="#FastAPI应用和服务结构，提供更易于维护的代码库" class="headerlink" title="FastAPI应用和服务结构，提供更易于维护的代码库"></a>FastAPI应用和服务结构，提供更易于维护的代码库</h2><ul>
+<li>本文将介绍一种方法来构建包含多个服务的FastAPI应用程序。建议的结构将单个服务分解为包和模块，遵循抽象和关注点分离的原则。下面讨论的代码也可以在一个专用的GitHub存储库中完整地研究。</li>
+</ul>
+</li>
+<li><h2 id="FastAPI-构建高性能的Python-API"><a href="#FastAPI-构建高性能的Python-API" class="headerlink" title="FastAPI-构建高性能的Python API"></a>FastAPI-构建高性能的Python API</h2><ul>
+<li><p>FastAPI是一个基于Starlette的快速、高度直观和文档良好的API框架。尽管它相对较新，但它已经得到了开发者社区的大力采用——甚至已经被Netflix和微软等公司用于生产。</p>
+</li>
+<li><p>遵循UNIX的“做一件事，并把它做好”的哲学，根据应用程序的各个部分的任务分离，提高了代码的可读性和可维护性;最终降低复杂度。以这种方式构造应用程序的主要好处是:</p>
+</li>
+<li><p>关注点分离——将应用程序分解为执行单个任务的模块。这允许接受请求(自顶向下:控制器→服务→数据访问)和返回响应(自底向上:数据访问→服务→控制器)，并明确区分在哪个特定模块中应该实现哪些特定功能，从而减少开发的认知负荷。</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/6c6e6d1a9a2252c24c72049f74382abee765095c/9408a/_nuxt/img/request-response.df4b985.jpg" alt="Request-Response Flow across Application Layers"></p>
+<p>跨应用层的请求-响应流</p>
+</li>
+</ul>
+</li>
+<li><p><strong>抽象</strong>——应用程序的组件是以可重用的方式设计的。例如，<em>ServiceResult</em>被实现为一个泛型，服务操作的结果(可能成功并返回一个响应，或者不成功并引发异常)能够被应用程序的所有服务使用，保持代码为DRY。</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/fc6bd09df8db15e783bd11117eba8003350f04cc/465f4/_nuxt/img/directory-structure.0c63d71.jpg" alt="Directory Structure Overview"></p>
+<p>目录结构概述</p>
+</li>
+<li><p>名称空间的粒度特性允许区分应用程序的各个部分，例如，属于特定服务的路由和业务逻辑——将类似的任务分组在一起，同时保持不同的部分分开。需要四个主要的方案。对于每个服务，将一个模块添加到这四个包中。例如，一个名为“Foo”的服务需要以下模块(详细讨论如下):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./routers/  foo.py <span class="comment"># Router instance and routes</span></span><br><span class="line">./services/ foo.py <span class="comment"># Business logic (including CRUD helpers)</span></span><br><span class="line">./schemas/  foo.py <span class="comment"># Data &quot;schemas&quot; (e.g., Pydantic models)</span></span><br><span class="line">./models/   foo.py <span class="comment"># Database models (e.g., SQLAlchemy models)</span></span><br></pre></td></tr></table></figure>
+
+<p>这四个主要包由两个通用包补充，它们包含特定于应用程序(而不是特定于服务)的包。功能，如配置或实用程序功能。</p>
+</li>
+<li><h2 id="控制器层-路由"><a href="#控制器层-路由" class="headerlink" title="控制器层-路由"></a>控制器层-路由</h2><ul>
+<li><p>在<em>main</em>中，将实例化应用程序，并包含所有路由器。此外，还实现了中间件和&#x2F;或异常处理程序。下面讨论的示例应用程序基于一个名为<em>Foo</em>的服务，它需要许多路由。为了处理发生在服务层的自定义异常(作为类<em>ApDExceptionCase</em>的实例)，将向应用程序添加相应的异常处理程序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤ 	main.py</span><br><span class="line"><span class="number">1</span> <span class="comment"># ...</span></span><br><span class="line"><span class="number">2</span> <span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"><span class="number">3</span> <span class="keyword">from</span> routers <span class="keyword">import</span> foo</span><br><span class="line"></span><br><span class="line"><span class="number">4</span> app = FastAPI()</span><br><span class="line"></span><br><span class="line"><span class="number">5</span> @app.exception_handler(AppExceptionCase)</span><br><span class="line"><span class="number">6</span> <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">custom_app_exception_handler</span>(<span class="params">request, e</span>):</span><br><span class="line"><span class="number">7</span>    <span class="keyword">return</span> <span class="keyword">await</span> app_exception_handler(request, e)</span><br><span class="line"></span><br><span class="line"><span class="number">8</span> app.include_router(foo.router)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>路由器及其路由在<em>routers</em>包中的模块中定义。每个路由实例化各自的服务，并从请求依赖项传递数据库会话。由<em>handle_result()<em>处理，返回服务结果(请求的数据作为成功操作的结果，或异常)。在异常的情况下，应用程序的异常处理程序在</em>main</em>中进行异常处理并返回一个响应，而不是在此之前返回任何响应。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			routers ›foo.py</span><br><span class="line"><span class="number">1</span> router = APIRouter(prefix=<span class="string">&quot;/foo&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">2</span> @router.post(<span class="string">&quot;/item/&quot;</span>, response_model=FooItem)</span><br><span class="line"><span class="number">3</span> <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">create_item</span>(<span class="params">item: FooItemCreate, db: get_db=Depends(<span class="params"></span>)</span>):</span><br><span class="line"><span class="number">4</span>    result = FooService(db).create_item(item)</span><br><span class="line"><span class="number">5</span>    <span class="keyword">return</span> handle_result(result)</span><br><span class="line"></span><br><span class="line"><span class="number">6</span> @router.get(<span class="string">&quot;/item/&#123;item_id&#125;&quot;</span>, response_model=FooItem)</span><br><span class="line"><span class="number">7</span> <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">get_item</span>(<span class="params">item_id: <span class="built_in">int</span>, db: get_db = Depends(<span class="params"></span>)</span>):</span><br><span class="line"><span class="number">8</span>    result = FooService(db).get_item(item_id)</span><br><span class="line"><span class="number">9</span>    <span class="keyword">return</span> handle_result(result)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h2 id="服务结果类-成功和异常"><a href="#服务结果类-成功和异常" class="headerlink" title="服务结果类-成功和异常"></a>服务结果类-成功和异常</h2><ul>
+<li><p><em>ServiceResult</em>类定义了一个服务操作的通用结果。如果操作成功，结果(或“value”)将返回，包含在实例的value属性中。在自定义应用程序异常的情况下，服务结果实例包含引发异常的信息(例如，哪些状态代码应该返回给客户端)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			utils ›service_result.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">ServiceResult</span>:</span><br><span class="line"><span class="number">2</span>     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, arg</span>):</span><br><span class="line"><span class="number">3</span>         <span class="keyword">if</span> <span class="built_in">isinstance</span>(arg, AppExceptionCase):</span><br><span class="line"><span class="number">4</span>             self.success = <span class="literal">False</span></span><br><span class="line"><span class="number">5</span>             self.exception_case = arg.exception_case</span><br><span class="line"><span class="number">6</span>             self.status_code = arg.status_code</span><br><span class="line"><span class="number">7</span>         <span class="keyword">else</span>:</span><br><span class="line"><span class="number">8</span>             self.success = <span class="literal">True</span></span><br><span class="line"><span class="number">9</span>             self.exception_case = <span class="literal">None</span></span><br><span class="line"><span class="number">10</span>            self.status_code = <span class="literal">None</span></span><br><span class="line"><span class="number">11</span>        self.value = arg</span><br><span class="line"></span><br><span class="line"><span class="number">12</span>    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line"><span class="number">13</span>        <span class="keyword">if</span> self.success:</span><br><span class="line"><span class="number">14</span>            <span class="keyword">return</span> <span class="string">&quot;[Success]&quot;</span></span><br><span class="line"><span class="number">15</span>        <span class="keyword">return</span> <span class="string">f&#x27;[Exception] &quot;<span class="subst">&#123;self.exception_case&#125;</span>&quot;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">16</span>    <span class="keyword">def</span> <span class="title function_">__repr__</span>(<span class="params">self</span>):</span><br><span class="line"><span class="number">17</span>        <span class="keyword">if</span> self.success:</span><br><span class="line"><span class="number">18</span>            <span class="keyword">return</span> <span class="string">&quot;&lt;ServiceResult Success&gt;&quot;</span></span><br><span class="line"><span class="number">19</span>        <span class="keyword">return</span> <span class="string">f&quot;&lt;ServiceResult AppException <span class="subst">&#123;self.exception_case&#125;</span>&gt;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="number">20</span>    <span class="keyword">def</span> <span class="title function_">__enter__</span>(<span class="params">self</span>):</span><br><span class="line"><span class="number">21</span>        <span class="keyword">return</span> self.value</span><br><span class="line"></span><br><span class="line"><span class="number">22</span>    <span class="keyword">def</span> <span class="title function_">__exit__</span>(<span class="params">self, *kwargs</span>):</span><br><span class="line"><span class="number">23</span>        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="number">24</span> <span class="keyword">def</span> <span class="title function_">handle_result</span>(<span class="params">result: ServiceResult</span>) -&gt; :</span><br><span class="line"><span class="number">25</span>     <span class="keyword">if</span> <span class="keyword">not</span> result.success:</span><br><span class="line"><span class="number">26</span>         <span class="keyword">with</span> result <span class="keyword">as</span> exception:</span><br><span class="line"><span class="number">27</span>             <span class="keyword">raise</span> exception</span><br><span class="line"><span class="number">28</span>     <span class="keyword">with</span> result <span class="keyword">as</span> result:</span><br><span class="line"><span class="number">29</span>         <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h2 id="服务层—业务逻辑"><a href="#服务层—业务逻辑" class="headerlink" title="服务层—业务逻辑"></a>服务层—业务逻辑</h2><ul>
+<li><p>服务在<em>services</em>包中定义。</p>
+</li>
+<li><p>每个服务都是<em>AppService</em>的一个子类。数据库会话通过一个“类似接口”的mixin实用工具类从请求依赖中传递下来(其他的mixin类可以通过多重继承来添加，以扩展可用的属性)</p>
+</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤     services ›main.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">DBSessionMixin</span>:</span><br><span class="line"><span class="number">2</span>     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, db: Session</span>):</span><br><span class="line"><span class="number">3</span>         self.db = db</span><br><span class="line"></span><br><span class="line"><span class="number">4</span> <span class="keyword">class</span> <span class="title class_">AppService</span>(<span class="title class_ inherited__">DBSessionMixin</span>):</span><br><span class="line"><span class="number">5</span>     <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="number">6</span> <span class="keyword">class</span> <span class="title class_">AppCRUD</span>(<span class="title class_ inherited__">DBSessionMixin</span>):</span><br><span class="line"><span class="number">7</span>     <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>属于<em>Foo</em>服务的路由连接到<em>FooService</em>的方法，它封装了该服务的所有业务逻辑。返回值的类型是<em>ServiceResult:<em>包含一个带有可返回数据的值属性，或者在出现异常的情况下，包含一个</em>AppException</em>。在这两种情况下，各自的结果都会“向上”返回到控制器层。</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			services ›foo.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">FooService</span>(<span class="title class_ inherited__">AppService</span>):</span><br><span class="line"><span class="number">2</span>     <span class="keyword">def</span> <span class="title function_">create_item</span>(<span class="params">self, item: FooItemCreate</span>) -&gt; ServiceResult:</span><br><span class="line"><span class="number">3</span>         foo_item = FooCRUD(self.db).create_item(item)</span><br><span class="line"><span class="number">4</span>         <span class="keyword">if</span> <span class="keyword">not</span> foo_item:</span><br><span class="line"><span class="number">5</span>             <span class="keyword">return</span> ServiceResult(AppException.FooCreateItem())</span><br><span class="line"><span class="number">6</span>         <span class="keyword">return</span> ServiceResult(foo_item)</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>     <span class="keyword">def</span> <span class="title function_">get_item</span>(<span class="params">self, item_id: <span class="built_in">int</span></span>) -&gt; ServiceResult:</span><br><span class="line"><span class="number">8</span>         foo_item = FooCRUD(self.db).get_item(item_id)</span><br><span class="line"><span class="number">9</span>         <span class="keyword">if</span> <span class="keyword">not</span> foo_item:</span><br><span class="line"><span class="number">10</span>             <span class="keyword">return</span> ServiceResult(AppException.FooGetItem(&#123;<span class="string">&quot;item_id&quot;</span>: item_id&#125;))</span><br><span class="line"><span class="number">11</span>        <span class="keyword">if</span> <span class="keyword">not</span> foo_item.public:</span><br><span class="line"><span class="number">12</span>            <span class="keyword">return</span> ServiceResult(AppException.FooItemRequiresAuth())</span><br><span class="line"><span class="number">13</span>        <span class="keyword">return</span> ServiceResult(foo_item)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h2 id="数据访问层-数据库操作"><a href="#数据访问层-数据库操作" class="headerlink" title="数据访问层-数据库操作"></a>数据访问层-数据库操作</h2><ul>
+<li>CRUD助手方法在数据库上执行操作，并子类化AppCRUD。数据库会话从AppService实例传递下来。这些方法是原子性的，只与对数据库的操作有关。它们不包含任何业务逻辑。</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			services ›foo.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">FooCRUD</span>(<span class="title class_ inherited__">AppCRUD</span>):</span><br><span class="line"><span class="number">2</span>     <span class="keyword">def</span> <span class="title function_">create_item</span>(<span class="params">self, item: FooItemCreate</span>) -&gt; FooItem:</span><br><span class="line"><span class="number">3</span>         foo_item = FooItem(description=item.description, public=item.public)</span><br><span class="line"><span class="number">4</span>         self.db.add(foo_item)</span><br><span class="line"><span class="number">5</span>         self.db.commit()</span><br><span class="line"><span class="number">6</span>         self.db.refresh(foo_item)</span><br><span class="line"><span class="number">7</span>         <span class="keyword">return</span> foo_item</span><br><span class="line"></span><br><span class="line"><span class="number">8</span>     <span class="keyword">def</span> <span class="title function_">get_item</span>(<span class="params">self, item_id: <span class="built_in">int</span></span>) -&gt; FooItem:</span><br><span class="line"><span class="number">9</span>         foo_item = self.db.query(FooItem).<span class="built_in">filter</span>(FooItem.<span class="built_in">id</span> == item_id).first()</span><br><span class="line"><span class="number">10</span>        <span class="keyword">if</span> foo_item:</span><br><span class="line"><span class="number">11</span>            <span class="keyword">return</span> foo_item</span><br><span class="line"><span class="number">12</span>        <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>Pydantic“模式”或模型在<em>schemas</em>包中定义。它们主要包含两种不同的数据模型。首先，那些来自客户端的请求数据(路由方法定义中的路由参数)。第二，希望作为响应数据返回给客户机的数据(在路由定义的response_model参数中定义)。</p>
+</li>
+<li><p>此外，可以对应用程序层(控制器、服务和数据访问)之间传递的任何类型的数据建模。</p>
+</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			schemas ›foo.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">FooItemBase</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line"><span class="number">2</span>     description: <span class="built_in">str</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span> <span class="keyword">class</span> <span class="title class_">FooItemCreate</span>(<span class="title class_ inherited__">FooItemBase</span>):</span><br><span class="line"><span class="number">4</span>     public: <span class="built_in">bool</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span> <span class="keyword">class</span> <span class="title class_">FooItem</span>(<span class="title class_ inherited__">FooItemBase</span>):</span><br><span class="line"><span class="number">6</span>     <span class="built_in">id</span>: <span class="built_in">int</span></span><br><span class="line"></span><br><span class="line"><span class="number">7</span> <span class="keyword">class</span> <span class="title class_">Config</span>:</span><br><span class="line"><span class="number">8</span>     orm_mode = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>SQLAlchemy模型在<em>models</em>包中定义。它们定义了如何在关系数据库中存储数据。它们是从AppCRUD引用的。如果需要，请确保通过适当的导入名称空间来区分<em>FooItem</em>模型(SQLAlchemy)和<em>FooItem</em>模式(Pydantic)。</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			models ›foo.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">FooItem</span>(<span class="title class_ inherited__">Base</span>):</span><br><span class="line"><span class="number">2</span>     __tablename__ = <span class="string">&quot;foo_items&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>     <span class="built_in">id</span> = Column(Integer, primary_key=<span class="literal">True</span>, index=<span class="literal">True</span>)</span><br><span class="line"><span class="number">4</span>     description = Column(String)</span><br><span class="line"><span class="number">5</span>     public = Column(Boolean, default=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
+<li>应用程序异常在<em>utils</em>包中实现。首先，<em>AppExceptionCase</em>是基础<em>Exception</em>的子类，包含用于定义自定义应用程序异常场景的各种属性。异常处理程序的任务是处理自定义的应用程序异常(添加到<em>main</em>，见上文)，它通过一个包含应用程序异常信息的响应来定义。</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			utils ›app_exceptions.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">AppExceptionCase</span>(<span class="title class_ inherited__">Exception</span>):</span><br><span class="line"><span class="number">2</span>     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, status_code: <span class="built_in">int</span>, context: <span class="built_in">dict</span></span>):</span><br><span class="line"><span class="number">3</span>         self.exception_case = self.__class__.__name__</span><br><span class="line"><span class="number">4</span>         self.status_code = status_code</span><br><span class="line"><span class="number">5</span>         self.context = context</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>     <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line"><span class="number">7</span>         <span class="keyword">return</span> (</span><br><span class="line"><span class="number">8</span>             <span class="string">f&quot;&lt;AppException <span class="subst">&#123;self.exception_case&#125;</span> - &quot;</span></span><br><span class="line"><span class="number">9</span>             + <span class="string">f&quot;status_code=<span class="subst">&#123;self.status_code&#125;</span> - context=<span class="subst">&#123;self.context&#125;</span>&gt;&quot;</span></span><br><span class="line"><span class="number">10</span>        )</span><br><span class="line"></span><br><span class="line"><span class="number">11</span> <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">app_exception_handler</span>(<span class="params">request: Request, exc: AppExceptionCase</span>):</span><br><span class="line"><span class="number">12</span>    <span class="keyword">return</span> JSONResponse(</span><br><span class="line"><span class="number">13</span>        status_code=exc.status_code,</span><br><span class="line"><span class="number">14</span>        content=&#123;</span><br><span class="line"><span class="number">15</span>            <span class="string">&quot;app_exception&quot;</span>: exc.exception_case,</span><br><span class="line"><span class="number">16</span>            <span class="string">&quot;context&quot;</span>: exc.context,</span><br><span class="line"><span class="number">17</span>        &#125;,</span><br><span class="line"><span class="number">18</span>    )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第二，在同一个模块中定义并记录自定义异常场景，需要从<em>AppExceptionCase</em>中继承子类。每个应用程序异常都在文档字符串中包含一个描述，并定义了返回给客户端的状态代码。类名被报告回来，以通知客户端特定的异常场景——请参阅<em>AppExceptionCase</em>初始化和应用程序异常处理程序中的<em>JSONResponse</em>。</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			utils ›app_exceptions.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">AppException</span>:</span><br><span class="line"><span class="number">2</span>    <span class="keyword">class</span> <span class="title class_">FooCreateItem</span>(<span class="title class_ inherited__">AppExceptionCase</span>):</span><br><span class="line"><span class="number">3</span>        <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, context: <span class="built_in">dict</span> = <span class="literal">None</span></span>):</span><br><span class="line"><span class="number">4</span>            <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">5            Item creation failed</span></span><br><span class="line"><span class="string">6            &quot;&quot;&quot;</span></span><br><span class="line"><span class="number">7</span>            status_code = <span class="number">500</span></span><br><span class="line"><span class="number">8</span>            AppExceptionCase.__init__(self, status_code, context)</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>    <span class="keyword">class</span> <span class="title class_">FooGetItem</span>(<span class="title class_ inherited__">AppExceptionCase</span>):</span><br><span class="line"><span class="number">10</span>        <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, context: <span class="built_in">dict</span> = <span class="literal">None</span></span>):</span><br><span class="line"><span class="number">11</span>            <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">12            Item not found</span></span><br><span class="line"><span class="string">13            &quot;&quot;&quot;</span></span><br><span class="line"><span class="number">14</span>            status_code = <span class="number">404</span></span><br><span class="line"><span class="number">15</span>            AppExceptionCase.__init__(self, status_code, context)</span><br><span class="line"></span><br><span class="line"><span class="number">16</span>    <span class="keyword">class</span> <span class="title class_">FooItemRequiresAuth</span>(<span class="title class_ inherited__">AppExceptionCase</span>):</span><br><span class="line"><span class="number">17</span>        <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, context: <span class="built_in">dict</span> = <span class="literal">None</span></span>):</span><br><span class="line"><span class="number">18</span>            <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">19            Item is not public and requires auth</span></span><br><span class="line"><span class="string">20            &quot;&quot;&quot;</span></span><br><span class="line"><span class="number">21</span>            status_code = <span class="number">401</span></span><br><span class="line"><span class="number">22</span>            AppExceptionCase.__init__(self, status_code, context)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>可以向异常添加上下文*AppException.FooCreateltem({“id”:123})*，以便通知客户端一个异常的上下文，如果需要。</p>
+</li>
+<li><p>要编译所有异常的列表(例如，为了本地化向客户端显示的应用程序异常消息)，访问<em>AppException</em>范围内的所有属性:</p>
+</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">⬤ ⬤ ⬤			utils ›get_exceptions_for_frontend.py</span><br><span class="line"><span class="number">1</span> <span class="keyword">from</span> utils.app_exceptions <span class="keyword">import</span> AppException</span><br><span class="line"></span><br><span class="line"><span class="number">2</span> <span class="built_in">print</span>([e <span class="keyword">for</span> e <span class="keyword">in</span> <span class="built_in">dir</span>(AppException) <span class="keyword">if</span> <span class="string">&quot;__&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> e])</span><br><span class="line"><span class="number">3</span> <span class="comment"># [&#x27;FooCreateItem&#x27;, &#x27;FooGetItem&#x27;, &#x27;FooItemRequiresAuth&#x27;]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ul>
+<li>提出的方法允许设计高度结构化的FastAPI应用程序，以容纳多个服务，允许在统一模式中实现任意数量的服务。</li>
+</ul>
+</li>
+</ul>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/25/Pip%E9%94%99%E8%AF%AF/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Pip安装找不到Pip包</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/02/28/DRF%E6%BA%90%E7%A0%81/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">DRF源码</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='/js/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        admin_email: "1113855149@qq.com",
+        appId: "JzXEzGL0Nd6hpMvSef3r2rM7-gzGzoHsz",
+        appKey: "wJdh8Ayj3yeBJJHkOjzoEybj",
+        avatar: "identicon",
+        placeholder: "请留下您宝贵的评论吧.",
+        notify: true,
+        visitor: true,
+        pageSize: 7,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://file.52xiaobei.cn/bFxrC3Wet70up4PB4sFV1FCXHCsud4JA/logo.png" class="soft-size--round soft-style--box" alt="XiaoBei">
+    
+    
+      <h2>XiaoBei</h2>
+    
+    
+      <p>做一个平凡而不平庸的码农.</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>16</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        8
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        12
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Django/">
+            Django (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Python/">
+            Python (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Docker/">
+            Docker (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Pytnon/">
+            Pytnon (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+            数据结构 (6)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Vue/">
+            Vue (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+            数据库 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Hexo/">
+            Hexo (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/DRF/" style="font-size: 10px;" class="tags-cloud-0">DRF</a> <a href="/tags/Django/" style="font-size: 10px;" class="tags-cloud-0">Django</a> <a href="/tags/Docker/" style="font-size: 13.33px;" class="tags-cloud-3">Docker</a> <a href="/tags/Docker%E5%9F%BA%E7%A1%80/" style="font-size: 13.33px;" class="tags-cloud-3">Docker基础</a> <a href="/tags/FastApi/" style="font-size: 10px;" class="tags-cloud-0">FastApi</a> <a href="/tags/Hexo/" style="font-size: 10px;" class="tags-cloud-0">Hexo</a> <a href="/tags/Python/" style="font-size: 20px;" class="tags-cloud-10">Python</a> <a href="/tags/Pytnon/" style="font-size: 13.33px;" class="tags-cloud-3">Pytnon</a> <a href="/tags/Vue/" style="font-size: 10px;" class="tags-cloud-0">Vue</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;" class="tags-cloud-0">关系型数据库</a> <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;" class="tags-cloud-0">搭建博客</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 16.67px;" class="tags-cloud-7">数据结构</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+    </div>
+     
+    <p>&copy; 2022 <a href="/" target="_blank">XiaoBei博客</a></p>
+
+    
+      <p><a href="https://beian.miit.gov.cn" target="_blank">京ICP备2020047212号</a></p>
+    
+
+    <p>作者 - <a href="https://52xiaobei.cn/about" target="_blank" rel="noopener noreferrer">XiaoBei</a> 项目 - <a href="https://github.com/LaoJiuGua" target="_blank" rel="noopener noreferrer author">GitHub</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
