@@ -104,4 +104,4 @@ theme: volantis
 deploy:
   type: git
   repo: https://github.com/LaoJiuGua/LaoJiuGua.github.io.git
-  branch: main
+  branch: master
