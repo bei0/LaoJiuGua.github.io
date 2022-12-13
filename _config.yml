@@ -1,15 +1,16 @@
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
-
 # Site
 title: 小北技术博客
 subtitle: ''
 description: '小北技术博客|编程|网络技术'
 keywords:
-author: John Doe
+author: XiaoBei
 language: en
 timezone: ''
+
+favicon: https://file.52xiaobei.cn/9W7fdRad34YzzcWx65sxRJfVRJEuUlPo/favicon.ico
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'

@@ -1,0 +1,2180 @@
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+FATAL Port 4000 has been used. Try other port instead.
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1463:16)
+    at listenInCluster (node:net:1511:12)
+    at Server.listen (node:net:1599:7)
+    at /home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:68:12
+    at Promise._execute (/home/pro/my_blog/blog/node_modules/bluebird/js/release/debuggability.js:384:9)
+    at Promise._resolveFromExecutor (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:518:18)
+    at new Promise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:103:10)
+    at checkPort (/home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:65:10)
+    at Hexo.module.exports (/home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:17:10)
+    at Hexo.tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34)
+    at Hexo.call (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:258:27)
+    at /opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/lib/hexo.js:60:17
+    at tryCatcher (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/promise.js:547:31)
+    at Promise._settlePromise (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/promise.js:604:18)
+    at Promise._settlePromise0 (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/promise.js:649:10)
+    at Promise._settlePromises (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/promise.js:729:18)
+    at _drainQueueStep (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/async.js:93:12)
+    at _drainQueue (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/async.js:86:9)
+    at Async._drainQueues (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/async.js:102:5)
+    at Immediate.Async.drainQueues (/opt/server/nvm/versions/node/v16.18.1/lib/node_modules/hexo-cli/node_modules/bluebird/js/release/async.js:15:14)
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:8989/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+Usage: hexo <command>
+
+Commands:
+  clean     Remove generated files and cache.
+  config    Get or set configurations.
+  deploy    Deploy your website.
+  generate  Generate static files.
+  help      Get help on a command.
+  init      Create a new Hexo folder.
+  list      List the information of the site
+  migrate   Migrate your site from other system to Hexo.
+  new       Create a new post.
+  publish   Moves a draft post from _drafts to _posts folder.
+  render    Render files with renderer plugins.
+  server    Start the server.
+  version   Display version information.
+
+Global Options:
+  --config  Specify config file instead of using _config.yml
+  --cwd     Specify the CWD
+  --debug   Display all verbose messages in the terminal
+  --draft   Display draft posts
+  --safe    Disable all plugins and scripts
+  --silent  Hide output on console
+
+For more help, you can use 'hexo help [command]' for the detailed information
+or you can check the docs: http://hexo.io/docs/
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+Usage: hexo <command>
+
+Commands:
+  clean     Remove generated files and cache.
+  config    Get or set configurations.
+  deploy    Deploy your website.
+  generate  Generate static files.
+  help      Get help on a command.
+  init      Create a new Hexo folder.
+  list      List the information of the site
+  migrate   Migrate your site from other system to Hexo.
+  new       Create a new post.
+  publish   Moves a draft post from _drafts to _posts folder.
+  render    Render files with renderer plugins.
+  server    Start the server.
+  version   Display version information.
+
+Global Options:
+  --config  Specify config file instead of using _config.yml
+  --cwd     Specify the CWD
+  --debug   Display all verbose messages in the terminal
+  --draft   Display draft posts
+  --safe    Disable all plugins and scripts
+  --silent  Hide output on console
+
+For more help, you can use 'hexo help [command]' for the detailed information
+or you can check the docs: http://hexo.io/docs/
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:8989/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+
+> hexo-site@0.0.0 start
+> hexo clean && hexo g && hexo s
+
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Deleted database.
+INFO  Deleted public folder.
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Files loaded in 918 ms
+INFO  Check environment configuration success!
+INFO  Generated: Python/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2022/index.html
+INFO  Generated: archives/2022/12/index.html
+INFO  Generated: index.html
+INFO  Generated: css/Readme.html
+INFO  Generated: js/app.js
+INFO  Generated: js/plugins/rightMenu.js
+INFO  Generated: css/first.css
+INFO  Generated: css/style.css
+INFO  Generated: js/plugins/rightMenus.js
+INFO  Generated: 2022/12/01/Hello/index.html
+INFO  Generated: js/search/hexo.js
+INFO  Generated: js/plugins/tags/contributors.js
+INFO  Generated: js/plugins/aplayer.js
+INFO  Generated: js/plugins/parallax.js
+INFO  Generated: js/plugins/tags/friends.js
+INFO  Generated: js/plugins/tags/sites.js
+INFO  18 files generated in 1.91 s
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+sh: line 1:  7597 Killed                  hexo s
+
+> hexo-site@0.0.0 start
+> hexo clean && hexo g && hexo s
+
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Deleted database.
+INFO  Deleted public folder.
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Files loaded in 1.03 s
+INFO  Check environment configuration success!
+INFO  Generated: Python/index.html
+INFO  Generated: about/index.html
+INFO  Generated: categoties/index.html
+INFO  Generated: friends/index.html
+INFO  Generated: getting-started/index.html
+INFO  Generated: tags/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2022/index.html
+INFO  Generated: archives/2022/12/index.html
+INFO  Generated: index.html
+INFO  Generated: css/Readme.html
+INFO  Generated: js/app.js
+INFO  Generated: js/plugins/rightMenu.js
+INFO  Generated: css/first.css
+INFO  Generated: css/style.css
+INFO  Generated: js/plugins/rightMenus.js
+INFO  Generated: 2022/12/01/getting-started/index.html
+INFO  Generated: js/search/hexo.js
+INFO  Generated: js/plugins/tags/contributors.js
+INFO  Generated: js/plugins/aplayer.js
+INFO  Generated: js/plugins/parallax.js
+INFO  Generated: js/plugins/tags/friends.js
+INFO  Generated: js/plugins/tags/sites.js
+INFO  Generated: 2022/12/01/friends/index.html
+INFO  Generated: 2022/12/01/auout/index.html
+INFO  Generated: 2022/12/01/categories/index.html
+INFO  Generated: 2022/12/01/tags/index.html
+INFO  Generated: 2022/12/01/Hello/index.html
+INFO  28 files generated in 1.93 s
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+WARN  Trying to "create" categories/index.md, but the file already exists!
+WARN  Trying to "create" getting-started/index.md, but the file already exists!
+ERROR Render HTML failed: 2022/12/01/Hello/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: 2022/12/01/Hello/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: 2022/12/01/Hello/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: 2022/12/01/Hello/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: 2022/12/01/Hello/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: 2022/12/01/Hello/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: categories/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: archives/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Render HTML failed: 2022/12/01/Hello/index.html
+TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/layout.ejs:29
+    27|     </div>
+    28|     <div>
+ >> 29|       <%- partial('_partial/scripts/index') %>
+    30|       <% if (theme.plugins.pjax.enable){ %>
+    31|         <%- partial('_plugins/pjax/index') %>
+    32|       <% } %>
+
+/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs:39
+    37| 
+    38| <% if (theme.rightmenus.enable) { %>
+ >> 39|   <%- partial('../../_plugins/rightmenus/layout') %>
+    40| <% } %>
+    41| 
+    42| <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs:47
+    45| 
+    46| <% rightMenu.loadMenu = item => { %>
+ >> 47| <%   if(item === undefined) { %>
+    48|     <hr class="menuLoad-Content" >
+    49| <%   } else if(item['id'] === undefined) { %>
+    50|     <hr class="menuLoad-Content" >
+
+Cannot read properties of null (reading 'id')
+    at Object.rightMenu.loadMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":63:24)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":35:23)
+    at Array.forEach (<anonymous>)
+    at Object.initMenu ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":23:30)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_plugins/rightmenus/layout.ejs":201:18)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/_partial/scripts/index.ejs":63:17)
+    at index (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiledSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:132:24)
+    at _View.renderSync (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:59:25)
+    at Object.partial (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/layout.ejs":52:17)
+    at layout (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+ERROR Process failed: categories/index.md
+YAMLException: bad indentation of a mapping entry (2:10)
+
+ 1 | date: 2022-12-01 15:12:37
+ 2 | excerpt: ``` layout: category index: true ...
+--------------^
+ 3 | title: categories
+ 4 | updated: 2022-12-06 16:22:43
+    at generateError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:187:9)
+    at readBlockMapping (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1182:7)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.load (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1714:19)
+    at parseYAML (/home/pro/my_blog/blog/node_modules/hexo-front-matter/lib/front_matter.js:69:23)
+    at parse (/home/pro/my_blog/blog/node_modules/hexo-front-matter/lib/front_matter.js:50:12)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/plugins/processor/asset.js:55:18
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:544:35)
+    at Promise._settlePromise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:604:18)
+    at Promise._settlePromise0 (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:649:10)
+    at Promise._settlePromises (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:729:18)
+    at Promise._fulfill (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:673:18)
+
+> hexo-site@0.0.0 start
+> hexo clean && hexo g && hexo s run
+
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Deleted database.
+INFO  Deleted public folder.
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Files loaded in 971 ms
+INFO  Check environment configuration success!
+INFO  Generated: content.json
+INFO  Generated: Python/index.html
+INFO  Generated: about/index.html
+INFO  Generated: categories/index.html
+INFO  Generated: friends/index.html
+INFO  Generated: getting-started/index.html
+INFO  Generated: tags/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2022/index.html
+INFO  Generated: archives/2022/12/index.html
+INFO  Generated: categories/Liunx/index.html
+INFO  Generated: categories/代码心得/index.html
+INFO  Generated: tags/Liunx/index.html
+INFO  Generated: tags/Kali/index.html
+INFO  Generated: tags/code/index.html
+INFO  Generated: index.html
+INFO  Generated: css/Readme.html
+INFO  Generated: js/app.js
+INFO  Generated: js/plugins/rightMenu.js
+INFO  Generated: css/first.css
+INFO  Generated: css/style.css
+INFO  Generated: js/plugins/rightMenus.js
+INFO  Generated: 2022/12/06/Hello/index.html
+INFO  Generated: js/search/hexo.js
+INFO  Generated: js/plugins/tags/contributors.js
+INFO  Generated: js/plugins/aplayer.js
+INFO  Generated: js/plugins/parallax.js
+INFO  Generated: js/plugins/tags/friends.js
+INFO  Generated: js/plugins/tags/sites.js
+INFO  Generated: 2022/12/01/验证姓名正则表达式/index.html
+INFO  30 files generated in 1.72 s
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+FATAL Port 4000 has been used. Try other port instead.
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1463:16)
+    at listenInCluster (node:net:1511:12)
+    at Server.listen (node:net:1599:7)
+    at /home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:68:12
+    at Promise._execute (/home/pro/my_blog/blog/node_modules/bluebird/js/release/debuggability.js:384:9)
+    at Promise._resolveFromExecutor (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:518:18)
+    at new Promise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:103:10)
+    at checkPort (/home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:65:10)
+    at Hexo.module.exports (/home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:17:10)
+    at Hexo.tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34)
+    at Hexo.call (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:258:27)
+    at /home/pro/my_blog/blog/node_modules/hexo-cli/lib/hexo.js:60:17
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:547:31)
+    at Promise._settlePromise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:604:18)
+
+> hexo-site@0.0.0 start
+> hexo clean && hexo g && hexo s run
+
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Deleted database.
+INFO  Deleted public folder.
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Files loaded in 897 ms
+INFO  Check environment configuration success!
+INFO  Generated: content.json
+INFO  Generated: Python/index.html
+INFO  Generated: about/index.html
+INFO  Generated: categories/index.html
+INFO  Generated: friends/index.html
+INFO  Generated: getting-started/index.html
+INFO  Generated: tags/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2022/index.html
+INFO  Generated: archives/2022/12/index.html
+INFO  Generated: categories/Liunx/index.html
+INFO  Generated: categories/代码心得/index.html
+INFO  Generated: tags/Liunx/index.html
+INFO  Generated: tags/Kali/index.html
+INFO  Generated: tags/code/index.html
+INFO  Generated: index.html
+INFO  Generated: css/Readme.html
+INFO  Generated: js/app.js
+INFO  Generated: js/plugins/rightMenu.js
+INFO  Generated: css/first.css
+INFO  Generated: css/style.css
+INFO  Generated: js/plugins/rightMenus.js
+INFO  Generated: 2022/12/06/Hello/index.html
+INFO  Generated: js/search/hexo.js
+INFO  Generated: js/plugins/tags/contributors.js
+INFO  Generated: js/plugins/aplayer.js
+INFO  Generated: js/plugins/parallax.js
+INFO  Generated: js/plugins/tags/friends.js
+INFO  Generated: js/plugins/tags/sites.js
+INFO  Generated: 2022/12/01/验证姓名正则表达式/index.html
+INFO  30 files generated in 1.81 s
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+FATAL Port 4000 has been used. Try other port instead.
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1463:16)
+    at listenInCluster (node:net:1511:12)
+    at Server.listen (node:net:1599:7)
+    at /home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:68:12
+    at Promise._execute (/home/pro/my_blog/blog/node_modules/bluebird/js/release/debuggability.js:384:9)
+    at Promise._resolveFromExecutor (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:518:18)
+    at new Promise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:103:10)
+    at checkPort (/home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:65:10)
+    at Hexo.module.exports (/home/pro/my_blog/blog/node_modules/hexo-server/lib/server.js:17:10)
+    at Hexo.tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34)
+    at Hexo.call (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:258:27)
+    at /home/pro/my_blog/blog/node_modules/hexo-cli/lib/hexo.js:60:17
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:547:31)
+    at Promise._settlePromise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:604:18)
+
+> hexo-site@0.0.0 start
+> hexo clean && hexo g && hexo s
+
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Deleted database.
+INFO  Deleted public folder.
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Files loaded in 922 ms
+INFO  Check environment configuration success!
+INFO  Generated: content.json
+INFO  Generated: Python/index.html
+INFO  Generated: about/index.html
+INFO  Generated: categories/index.html
+INFO  Generated: friends/index.html
+INFO  Generated: getting-started/index.html
+INFO  Generated: tags/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2022/index.html
+INFO  Generated: archives/2022/12/index.html
+INFO  Generated: categories/Liunx/index.html
+INFO  Generated: categories/代码心得/index.html
+INFO  Generated: tags/Liunx/index.html
+INFO  Generated: tags/Kali/index.html
+INFO  Generated: tags/code/index.html
+INFO  Generated: index.html
+INFO  Generated: css/Readme.html
+INFO  Generated: js/app.js
+INFO  Generated: js/plugins/rightMenu.js
+INFO  Generated: css/first.css
+INFO  Generated: css/style.css
+INFO  Generated: js/plugins/rightMenus.js
+INFO  Generated: 2022/12/06/Hello/index.html
+INFO  Generated: js/search/hexo.js
+INFO  Generated: js/plugins/tags/contributors.js
+INFO  Generated: js/plugins/aplayer.js
+INFO  Generated: js/plugins/parallax.js
+INFO  Generated: js/plugins/tags/friends.js
+INFO  Generated: js/plugins/tags/sites.js
+INFO  Generated: 2022/12/01/验证姓名正则表达式/index.html
+INFO  30 files generated in 1.81 s
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+
+> hexo-site@0.0.0 start
+> hexo clean && hexo g && hexo s
+
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Deleted database.
+INFO  Deleted public folder.
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Files loaded in 894 ms
+INFO  Check environment configuration success!
+INFO  Generated: content.json
+INFO  Generated: Python/index.html
+INFO  Generated: about/index.html
+INFO  Generated: categories/index.html
+INFO  Generated: friends/index.html
+INFO  Generated: getting-started/index.html
+INFO  Generated: tags/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2022/index.html
+INFO  Generated: archives/2022/12/index.html
+INFO  Generated: categories/Liunx/index.html
+INFO  Generated: categories/代码心得/index.html
+INFO  Generated: tags/Liunx/index.html
+INFO  Generated: tags/Kali/index.html
+INFO  Generated: tags/code/index.html
+INFO  Generated: index.html
+INFO  Generated: css/Readme.html
+INFO  Generated: js/app.js
+INFO  Generated: js/plugins/rightMenu.js
+INFO  Generated: css/first.css
+INFO  Generated: css/style.css
+INFO  Generated: js/plugins/rightMenus.js
+INFO  Generated: 2022/12/06/Hello/index.html
+INFO  Generated: js/search/hexo.js
+INFO  Generated: js/plugins/tags/contributors.js
+INFO  Generated: js/plugins/aplayer.js
+INFO  Generated: js/plugins/parallax.js
+INFO  Generated: js/plugins/tags/friends.js
+INFO  Generated: js/plugins/tags/sites.js
+INFO  Generated: 2022/12/01/验证姓名正则表达式/index.html
+INFO  30 files generated in 1.79 s
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+
+> hexo-site@0.0.0 start
+> hexo clean && hexo g && hexo s
+
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Deleted database.
+INFO  Deleted public folder.
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Files loaded in 1.03 s
+INFO  Check environment configuration success!
+INFO  Generated: content.json
+INFO  Generated: Python/index.html
+INFO  Generated: about/index.html
+INFO  Generated: categories/index.html
+INFO  Generated: friends/index.html
+INFO  Generated: getting-started/index.html
+INFO  Generated: tags/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2022/index.html
+INFO  Generated: archives/2022/12/index.html
+INFO  Generated: categories/Liunx/index.html
+INFO  Generated: categories/代码心得/index.html
+INFO  Generated: tags/Liunx/index.html
+INFO  Generated: tags/Kali/index.html
+INFO  Generated: tags/code/index.html
+INFO  Generated: index.html
+INFO  Generated: css/Readme.html
+INFO  Generated: js/app.js
+INFO  Generated: js/plugins/rightMenu.js
+INFO  Generated: css/first.css
+INFO  Generated: css/style.css
+INFO  Generated: js/plugins/rightMenus.js
+INFO  Generated: 2022/12/06/Hello/index.html
+INFO  Generated: js/search/hexo.js
+INFO  Generated: js/plugins/tags/contributors.js
+INFO  Generated: js/plugins/aplayer.js
+INFO  Generated: js/plugins/parallax.js
+INFO  Generated: js/plugins/tags/friends.js
+INFO  Generated: js/plugins/tags/sites.js
+INFO  Generated: 2022/12/01/验证姓名正则表达式/index.html
+INFO  30 files generated in 1.94 s
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+ERROR Process failed: _data/friends.yml
+YAMLException: bad indentation of a mapping entry (3:14)
+
+ 1 | volantis_developer:
+ 2 |   title:aa
+ 3 |   description:
+------------------^
+ 4 |   items:
+ 5 |     - title: xaoxuu
+    at generateError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:187:9)
+    at readBlockMapping (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1182:7)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.load (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1714:19)
+    at Hexo.yamlHelper (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/renderer/yaml.js:20:15)
+    at Hexo.tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/render.js:81:22
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:547:31)
+    at Promise._settlePromise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:604:18)
+    at Promise._settlePromise0 (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:649:10)
+    at Promise._settlePromises (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:729:18)
+ERROR Process failed: _data/friends.yml
+YAMLException: bad indentation of a mapping entry (3:14)
+
+ 1 | volantis_developer:
+ 2 |   title:aa
+ 3 |   description:
+------------------^
+ 4 |   items:
+ 5 |     - title: xaoxuu
+    at generateError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:187:9)
+    at readBlockMapping (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1182:7)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.load (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1714:19)
+    at Hexo.yamlHelper (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/renderer/yaml.js:20:15)
+    at Hexo.tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/render.js:81:22
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:547:31)
+    at Promise._settlePromise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:604:18)
+    at Promise._settlePromise0 (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:649:10)
+    at Promise._settlePromises (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:729:18)
+ERROR Process failed: _data/friends.yml
+YAMLException: missed comma between flow collection entries (2:2)
+
+ 1 | 
+ 2 | {% friends repo:pub/friends/ api: ...
+------^
+ 3 | 
+ 4 | volantis_developer:
+    at generateError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:187:9)
+    at readFlowCollection (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:758:7)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1442:11)
+    at readBlockMapping (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1104:12)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.load (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1714:19)
+    at Hexo.yamlHelper (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/renderer/yaml.js:20:15)
+    at Hexo.tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/render.js:81:22
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:547:31)
+    at Promise._settlePromise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:604:18)
+ERROR Process failed: _data/friends.yml
+YAMLException: missed comma between flow collection entries (1:2)
+
+ 1 | {% friends repo:pub/friends/ api: ...
+------^
+    at generateError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:187:9)
+    at readFlowCollection (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:758:7)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1442:11)
+    at readBlockMapping (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1104:12)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.load (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1714:19)
+    at Hexo.yamlHelper (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/renderer/yaml.js:20:15)
+    at Hexo.tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/render.js:81:22
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:547:31)
+    at Promise._settlePromise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:604:18)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+ERROR Process failed: _data/friends.yml
+YAMLException: missed comma between flow collection entries (1:2)
+
+ 1 | {% friends repo:pub/friends/ api: ...
+------^
+    at generateError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:183:10)
+    at throwError (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:187:9)
+    at readFlowCollection (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:758:7)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1442:11)
+    at readBlockMapping (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1104:12)
+    at composeNode (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1441:12)
+    at readDocument (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1625:3)
+    at loadDocuments (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1688:5)
+    at Object.load (/home/pro/my_blog/blog/node_modules/js-yaml/lib/loader.js:1714:19)
+    at Hexo.yamlHelper (/home/pro/my_blog/blog/node_modules/hexo/lib/plugins/renderer/yaml.js:20:15)
+    at Hexo.tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/render.js:81:22
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:547:31)
+    at Promise._settlePromise (/home/pro/my_blog/blog/node_modules/bluebird/js/release/promise.js:604:18)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+Unhandled rejection TypeError: /home/pro/my_blog/blog/themes/volantis/layout/friends.ejs:7
+    5|     <%- page.excerpt %>
+    6|     <% if (site.data.friends){ %>
+ >> 7|       <% site.data.friends.forEach((group, i) => { %>
+    8|         <div class='friends-group'>
+    9|           <br>
+    10|           <h2 class='friend-header'>
+
+site.data.friends.forEach is not a function
+    at eval ("/home/pro/my_blog/blog/themes/volantis/layout/friends.ejs":32:26)
+    at friends (/home/pro/my_blog/blog/node_modules/ejs/lib/ejs.js:703:17)
+    at _View._compiled (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:136:50)
+    at _View.render (/home/pro/my_blog/blog/node_modules/hexo/lib/theme/view.js:39:17)
+    at /home/pro/my_blog/blog/node_modules/hexo/lib/hexo/index.js:64:21
+    at tryCatcher (/home/pro/my_blog/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at /home/pro/my_blog/blog/node_modules/bluebird/js/release/method.js:15:34
+    at RouteStream._read (/home/pro/my_blog/blog/node_modules/hexo/lib/hexo/router.js:47:5)
+    at RouteStream.Readable.read (node:internal/streams/readable:487:10)
+    at resume_ (node:internal/streams/readable:987:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+> hexo-site@0.0.0 start
+> hexo clean && hexo g && hexo s
+
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Deleted database.
+INFO  Deleted public folder.
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Files loaded in 1.01 s
+INFO  Check environment configuration success!
+INFO  Generated: content.json
+INFO  Generated: Python/index.html
+INFO  Generated: about/index.html
+INFO  Generated: categories/index.html
+INFO  Generated: friends/index.html
+INFO  Generated: getting-started/index.html
+INFO  Generated: tags/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2022/index.html
+INFO  Generated: archives/2022/12/index.html
+INFO  Generated: categories/Liunx/index.html
+INFO  Generated: categories/代码心得/index.html
+INFO  Generated: tags/Liunx/index.html
+INFO  Generated: tags/Kali/index.html
+INFO  Generated: tags/code/index.html
+INFO  Generated: index.html
+INFO  Generated: css/Readme.html
+INFO  Generated: js/app.js
+INFO  Generated: js/plugins/rightMenu.js
+INFO  Generated: css/first.css
+INFO  Generated: css/style.css
+INFO  Generated: js/plugins/rightMenus.js
+INFO  Generated: 2022/12/01/验证姓名正则表达式/index.html
+INFO  Generated: js/search/hexo.js
+INFO  Generated: js/plugins/tags/contributors.js
+INFO  Generated: js/plugins/aplayer.js
+INFO  Generated: js/plugins/parallax.js
+INFO  Generated: js/plugins/tags/friends.js
+INFO  Generated: js/plugins/tags/sites.js
+INFO  Generated: 2022/12/07/Hello/index.html
+INFO  30 files generated in 1.96 s
+INFO  Validating config
+INFO  
+============================================================
+  Volantis 5.7.6
+  Docs: https://volantis.js.org/
+  Repo: https://github.com/volantis-x/hexo-theme-volantis/
+============================================================
+INFO  Start processing
+INFO  Checking environment configuration...
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+INFO  Check environment configuration success!
+WARN  Trying to "create" _drafts/mysql 一对多 将多条的数据组合成一条使用.md, but the file already exists!
